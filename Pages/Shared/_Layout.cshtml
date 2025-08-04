@@ -19,7 +19,7 @@
             left: 0;
             right: 0;
             z-index: 1001;
-            transition: transform 0.3s ease;
+            transition: transform 0.1s ease;
         }
 
         .top-header.hidden {
@@ -72,7 +72,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            transition: top 0.3s ease;
+            transition: top 0.1s ease;
             padding: 12px 0;
         }
 
@@ -94,12 +94,14 @@
         }
 
         .logo-image {
-            height: 45px; 
+            height: 45px; /* Ajusta según necesites */
             width: auto;
             transition: transform 0.3s ease;
         }
 
-        
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
 
         /* Navegación */
         .main-nav {
@@ -145,12 +147,27 @@
         }
 
         /* Espaciado para el contenido principal */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             padding-top: 110px; /* top-header + main-header */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         body.scrolled {
             padding-top: 70px; /* solo main-header */
+        }
+
+        /* Hacer que el main ocupe el espacio disponible */
+        main {
+            flex: 1;
+            padding-bottom: 0 !important;
         }
 
         /* Responsive */
@@ -173,7 +190,8 @@
             background-color: #1451c4;
             color: white;
             padding: 60px 0 0 0;
-            margin-top: 50px;
+            margin-top: 0;
+            flex-shrink: 0;
         }
 
         .footer-content {
@@ -377,7 +395,7 @@
         </div>
     </div>
 
-    <main role="main" class="pb-3">
+    <main role="main">
         @RenderBody()
     </main>
 
