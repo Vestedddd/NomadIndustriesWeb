@@ -9,8 +9,8 @@
         position: relative;
         height: 80vh;
         min-height: 600px;
-        margin-top: -110px; /* Compensar el padding del body */
-        padding-top: 110px; /* Espacio para el header */
+        margin-top: -110px; 
+        padding-top: 110px; 
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('~/images/banner-inicio.jpg');
         background-size: cover;
         background-position: center;
@@ -462,7 +462,7 @@
 
     }
 
-    /* Responsive */
+    
     @@media (max-width: 768px) {
         .hero-banner
 
@@ -516,7 +516,7 @@
         right: 20px;
     }
 
-    /* About section responsive */
+    
     .about-content {
         flex-direction: column;
         gap: 40px;
@@ -644,7 +644,7 @@
                 <div class="category-card">
                     <div class="category-content">
                         <h3 class="category-title">SENSORES IOT</h3>
-                        <a href="/productos/sensores-iot" class="category-btn">Ver Ahora</a>
+                        <a href="/Products/Sensores-iot" class="category-btn">Ver Ahora</a>
                     </div>
                 </div>
             </div>
@@ -809,7 +809,7 @@
                     <div class="bg-white text-start rounded-4 p-4 w-100" style="max-width: 300px;">
                         <h5 class="mb-2 text-dark fw-bold" style="font-size: 1.5rem;">Claudio Herrera</h5>
                         <p class="mb-2 text-secondary fw-semibold" style="font-size: 1.05rem;">Cargo:Ventas</p>
-                        <p class="mb-0 text-secondary fw-semibold" style="font-size: 1.05rem;">Correo:correo@nomad.cl</p>
+                        <p class="mb-0 text-secondary fw-semibold" style="font-size: 1.05rem;">Correo:ventas@nomadspa.cl</p>
                     </div>
                 </div>
             </div>
@@ -822,7 +822,7 @@
                     <div class="bg-white text-start rounded-4 p-4 w-100" style="max-width: 300px;">
                         <h5 class="mb-2 text-dark fw-bold" style="font-size: 1.5rem;">Eric Schmidt</h5>
                         <p class="mb-2 text-secondary fw-semibold" style="font-size: 1.05rem;">Cargo:Ventas</p>
-                        <p class="mb-0 text-secondary fw-semibold" style="font-size: 1.05rem;">Correo:correo@nomad.cl</p>
+                        <p class="mb-0 text-secondary fw-semibold" style="font-size: 1.05rem;">Correo:ventas@nomadspa.cl</p>
                     </div>
                 </div>
             </div>
@@ -1099,20 +1099,20 @@
 
 <script>
     function showContent(type) {
-        // Remover clase active de todos los botones
+        
         document.querySelectorAll('.mv-button').forEach(btn => {
             btn.classList.remove('active');
         });
 
-        // Ocultar todo el contenido
+        
         document.querySelectorAll('.mv-content').forEach(content => {
             content.classList.remove('active');
         });
 
-        // Activar el botón seleccionado
+        
         event.target.classList.add('active');
 
-        // Mostrar el contenido correspondiente
+        
         document.getElementById(type).classList.add('active');
     }
 
@@ -1123,11 +1123,11 @@
                 const isActive = this.classList.contains('active');
 
                 if (!isActive) {
-                    // Si no está activo, mostrar contenido
+                    
                     const type = this.textContent.includes('Misión') ? 'mission' : 'vision';
                     showContent(type);
                 } else {
-                    // Si ya está activo, navegar a la página completa
+                    
                     const target = this.getAttribute('data-target');
                     window.location.href = `/sobre-nosotros${target}`;
                 }
