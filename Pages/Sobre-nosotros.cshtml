@@ -1,0 +1,425 @@
+﻿@page
+@model NomadIndustriesWeb.Pages.Sobre_nosotrosModel
+@{
+    ViewData["Title"] = "Sobre Nosotros - Nomad Industrial";
+}
+
+<!-- Banner Principal -->
+<section class="sobre-hero-banner">
+    <div class="sobre-hero-content">
+        <h1 class="sobre-hero-title">SOBRE NOSOTROS</h1>
+        <p class="sobre-hero-subtitle">Conoce quiénes somos, qué nos mueve y hacia dónde vamos</p>
+    </div>
+</section>
+
+<!-- Misión y Visión -->
+<section class="mision-vision-section">
+    <div class="container">
+        <div class="mision-vision-container">
+            <!-- Imagen de fondo -->
+            <div class="background-image">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Handshake background">
+            </div>
+
+            <!-- Cuadro de contenido superpuesto -->
+            <div class="content-box">
+                <!-- Botones de selección -->
+                <div class="selector-buttons">
+                    <button class="selector-btn active" data-content="mision">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Misión</span>
+                    </button>
+                    <button class="selector-btn" data-content="vision">
+                        <i class="fas fa-eye"></i>
+                        <span>Visión</span>
+                    </button>
+                </div>
+
+                <!-- Contenido dinámico -->
+                <div class="dynamic-content">
+                    <div class="content-item active" id="mision">
+                        <h2 class="content-title">Nuestra misión</h2>
+                        <p class="content-text">
+                            Brindar soluciones industriales de alta calidad que generen confianza y aseguren la plena satisfacción de
+                            nuestros clientes, superando sus expectativas a través de un servicio eficiente, cercano y profesional. Nos
+                            proyectamos como una empresa innovadora, confiable y comprometida con la excelencia en cada etapa de
+                            nuestros procesos.
+                        </p>
+                    </div>
+
+                    <div class="content-item" id="vision">
+                        <h2 class="content-title">Nuestra visión</h2>
+                        <p class="content-text">
+                            Ser reconocidos como la empresa líder en soluciones industriales innovadoras en la región, destacando por
+                            nuestra capacidad de adaptación, calidad excepcional y compromiso con el desarrollo sostenible. Aspiramos
+                            a ser el socio estratégico preferido de nuestros clientes, contribuyendo al crecimiento y modernización de
+                            la industria a través de tecnologías avanzadas y un servicio integral.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Información de la empresa -->
+<section class="empresa-info-section">
+    <div class="container">
+        <h2 class="empresa-title">Nomad Industrial</h2>
+
+        <div class="empresa-content">
+            <p class="empresa-intro">
+                Nomad Industrial es una empresa chilena consolidada en el rubro de soluciones industriales, especializada en la importación,
+                fabricación y comercialización de productos técnicos, componentes estructurales y sistemas modulares para distintos sectores
+                productivos. Desde sus inicios, ha buscado posicionarse como un referente nacional, combinando innovación, calidad y un
+                enfoque orientado al cliente en cada uno de sus procesos y servicios.
+            </p>
+
+            <h3 class="empresa-subtitle">Historia y Desarrollo</h3>
+            <p class="empresa-text">
+                Nomad Industrial nace con la visión de ofrecer soluciones industriales eficientes, confiables y adaptables a las
+                necesidades del mercado chileno e internacional. A lo largo de los años, ha diversificado su oferta, integrando
+                tecnologías modernas, nuevos canales logísticos y servicios personalizados que han fortalecido su propuesta de valor.
+                Gracias a un enfoque estratégico basado en la mejora continua y el desarrollo tecnológico, la empresa ha logrado expandir
+                su presencia en rubros como el marítimo-portuario, construcción, minería, automatización industrial y exportaciones.
+            </p>
+
+            <h3 class="empresa-subtitle">Áreas de Negocio</h3>
+            <p class="empresa-text">
+                La empresa opera como un proveedor integral, ofreciendo servicios que abarcan desde la ingeniería, adquisición de productos
+                y asesoría técnica, hasta la logística, fabricación personalizada, ensamblaje y mantenimiento de soluciones industriales.
+                Nomad Industrial trabaja con productos diseñados para ofrecer durabilidad, seguridad y eficiencia operativa, seleccionados
+                cuidadosamente bajo estándares técnicos exigentes. Entre sus líneas principales se incluyen soluciones para transporte de
+                carga, contenedores y estructuras metálicas, herramientas especializadas y componentes industriales adaptables.
+            </p>
+
+            <h3 class="empresa-subtitle">Compromiso con la Innovación</h3>
+            <p class="empresa-text">
+                Nomad Industrial integra tecnologías modernas de diseño y manufactura con metodologías ágiles de gestión de proyectos.
+                El enfoque en innovación se refleja en la optimización constante de sus procesos de producción, el uso de plataformas
+                digitales para trazabilidad de productos, y la capacidad de desarrollar soluciones a medida para distintos clientes y rubros.
+                La empresa se encuentra en constante búsqueda de nuevas tecnologías y alianzas estratégicas que le permitan entregar un
+                servicio más completo y competitivo.
+            </p>
+
+            <h3 class="empresa-subtitle">Cultura Organizacional</h3>
+            <p class="empresa-text">
+                La cultura de Nomad Industrial se basa en los valores de compromiso, excelencia, responsabilidad y orientación al cliente.
+                Cada proyecto es abordado con profesionalismo y dedicación, procurando establecer relaciones de largo plazo basadas en la
+                confianza, la transparencia y el cumplimiento de objetivos. La empresa promueve un ambiente de trabajo colaborativo,
+                orientado a resultados y con foco en el crecimiento sostenible.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Banner Principal */
+    .sobre-hero-banner {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+        margin-top: -110px;
+        padding-top: 110px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .sobre-hero-title {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .sobre-hero-subtitle {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    /* Sección Misión y Visión */
+    .mision-vision-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+    }
+
+    .mision-vision-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 500px;
+    }
+
+    /* Imagen de fondo */
+    .background-image {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60%;
+        height: 400px;
+        z-index: 1;
+    }
+
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Cuadro de contenido superpuesto */
+    .content-box {
+        position: relative;
+        z-index: 2;
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 650px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+    }
+
+    /* Botones de selección */
+    .selector-buttons {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .selector-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #6c757d;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+        .selector-btn i {
+            font-size: 1.3rem;
+        }
+
+        .selector-btn:hover {
+            border-color: #1451c4;
+            color: #1451c4;
+            box-shadow: 0 4px 12px rgba(20, 81, 196, 0.15);
+        }
+
+        .selector-btn.active {
+            background: #1451c4;
+            border-color: #1451c4;
+            color: white;
+            box-shadow: 0 4px 15px rgba(20, 81, 196, 0.3);
+        }
+
+    /* Contenido dinámico */
+    .dynamic-content {
+        position: relative;
+    }
+
+    .content-item {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+        .content-item.active {
+            display: block;
+            opacity: 1;
+        }
+
+    .content-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 20px;
+    }
+
+    .content-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #444;
+        margin: 0;
+    }
+
+    /* Sección información de la empresa */
+    .empresa-info-section {
+        background-color: white;
+        padding: 80px 0;
+    }
+
+    .empresa-title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #1451c4;
+        text-align: center;
+        margin-bottom: 50px;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        text-decoration-thickness: 3px;
+    }
+
+    .empresa-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .empresa-intro {
+        font-size: 1.2rem;
+        line-height: 2.1;
+        color: #444;
+        margin-bottom: 40px;
+        text-align: justify;
+    }
+
+    .empresa-subtitle {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin: 40px 0 20px;
+    }
+
+    .empresa-text {
+        font-size: 1.1rem;
+        line-height: 2.1;
+        color: #444;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    /* Responsive */
+    @@media (max-width: 992px) {
+        .mision-vision-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .background-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            top: auto;
+            transform: none;
+            order: 2;
+        }
+
+        .content-box {
+            order: 1;
+            max-width: 100%;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .sobre-hero-title {
+            font-size: 3rem;
+        }
+
+        .sobre-hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .content-box {
+            padding: 30px 25px;
+        }
+
+        .content-title {
+            font-size: 1.8rem;
+        }
+
+        .content-text {
+            font-size: 1rem;
+        }
+
+        .selector-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .selector-btn {
+            justify-content: center;
+        }
+
+        .empresa-title {
+            font-size: 2.5rem;
+        }
+
+        .empresa-subtitle {
+            font-size: 1.5rem;
+        }
+
+        .empresa-intro,
+        .empresa-text {
+            font-size: 1rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .sobre-hero-title {
+            font-size: 2.5rem;
+        }
+
+        .content-box {
+            padding: 25px 20px;
+        }
+
+        .content-title {
+            font-size: 1.6rem;
+        }
+
+        .empresa-title {
+            font-size: 2rem;
+        }
+
+        .empresa-subtitle {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.selector-btn');
+        const contents = document.querySelectorAll('.content-item');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+
+        if (tabParam && (tabParam === 'mision' || tabParam === 'vision')) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            const targetButton = document.querySelector(`[data-content="${tabParam}"]`);
+            const targetContent = document.getElementById(tabParam);
+
+            if (targetButton && targetContent) {
+                targetButton.classList.add('active');
+                targetContent.classList.add('active');
+            }
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetContent = this.getAttribute('data-content');
+                buttons.forEach(btn => btn.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(targetContent).classList.add('active');
+            });
+        });
+    });
+</script>
