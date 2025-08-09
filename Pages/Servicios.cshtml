@@ -1,0 +1,549 @@
+﻿@page
+@model NomadIndustriesWeb.Pages.ServiciosModel
+@{
+    ViewData["Title"] = "Servicios - Nomad Industrial";
+}
+
+<!-- Banner Principal -->
+<section class="servicios-hero-banner">
+    <div class="servicios-hero-content">
+        <h1 class="servicios-hero-title">SERVICIOS</h1>
+        <p class="servicios-hero-subtitle">Soluciones técnicas que impulsan tu industria</p>
+    </div>
+</section>
+
+<!-- Servicios Principal -->
+<section class="servicios-main-section">
+    <div class="container">
+        <div class="servicios-container">
+            <!-- Cuadro de servicios -->
+            <div class="servicios-selector-box">
+                <h3 class="servicios-box-title">Servicios</h3>
+                <!-- Botones de servicios -->
+                <div class="servicios-buttons">
+                    <button class="servicio-btn active" data-servicio="ingenieria-inversa">
+                        <i class="fas fa-cogs"></i>
+                        <span>Ingeniería inversa</span>
+                    </button>
+                    <button class="servicio-btn" data-servicio="diseno-3d">
+                        <i class="fas fa-cube"></i>
+                        <span>Diseño modelamiento 3D</span>
+                    </button>
+                    <button class="servicio-btn" data-servicio="levantamiento-3d">
+                        <i class="fas fa-camera"></i>
+                        <span>Levantamiento 3D</span>
+                    </button>
+                    <button class="servicio-btn" data-servicio="nube-puntos">
+                        <i class="fas fa-cloud"></i>
+                        <span>Proceso de nube de puntos</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Información resumida del servicio -->
+            <div class="servicio-info-resumida">
+                <h3 class="servicio-nombre">Ingeniería inversa</h3>
+                <p class="servicio-resumen">
+                    Transformamos piezas físicas en modelos digitales precisos, asegurando compatibilidad,
+                    funcionalidad y mejoras continuas en cada componente técnico.
+                </p>
+            </div>
+
+            <!-- Imagen del servicio -->
+            <div class="servicio-imagen-box">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Servicio seleccionado" class="servicio-imagen">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Descripción detallada y contacto -->
+<section class="servicio-detalle-section">
+    <div class="container">
+        <div class="detalle-container">
+            <!-- Cuadro de contacto -->
+            <div class="contacto-servicio-box">
+                <a href="/contacto" class="contacto-servicio-title">Contáctanos</a>
+
+                <div class="contacto-servicio-logo">
+                    <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                </div>
+
+                <div class="contacto-servicio-divisor"></div>
+
+                <p class="contacto-servicio-texto">¿Interesado en este servicio?<br>Contáctanos y hablemos.</p>
+
+                <div class="contacto-servicio-info">
+                    <div class="contacto-servicio-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>nomadlindustrial@correo.com</span>
+                    </div>
+                    <div class="contacto-servicio-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+56912345678</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Descripción del servicio -->
+            <div class="servicio-descripcion">
+                <h2 class="descripcion-title">Descripción del servicio</h2>
+                <div class="descripcion-content">
+                    <p>
+                        Como expertos en soluciones industriales, ofrecemos servicios de ingeniería inversa para reproducir,
+                        optimizar o mejorar componentes técnicos a partir de piezas físicas ya existentes. Nuestro objetivo es
+                        ayudarte a recuperar diseños, adaptar tecnologías y reducir costos de producción sin comprometer la funcionalidad.
+                    </p>
+                    <p>
+                        Mediante el uso de herramientas avanzadas de digitalización 3D y análisis técnico, obtenemos modelos precisos que permiten:
+                    </p>
+                    <ul>
+                        <li>Replicar componentes industriales discontinuados</li>
+                        <li>Mejorar diseños para aumentar su rendimiento o durabilidad</li>
+                        <li>Adaptar piezas a nuevos entornos o sistemas</li>
+                        <li>Optimizar procesos de fabricación a partir del diseño original</li>
+                    </ul>
+                    <p>
+                        Nuestra experiencia abarca distintos sectores, desde maquinaria pesada hasta componentes de precisión.
+                        Con un enfoque colaborativo y técnico, garantizamos resultados confiables, ajustados a tus necesidades específicas.
+                    </p>
+                    <p>
+                        Confía en Nomad Industrial para transformar conocimiento en soluciones concretas, con respaldo tecnológico y
+                        compromiso profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Banner Principal */
+    .servicios-hero-banner {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+        margin-top: -110px;
+        padding-top: 110px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .servicios-hero-title {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .servicios-hero-subtitle {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    /* Sección principal de servicios */
+    .servicios-main-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+    }
+
+    .servicios-container {
+        display: grid;
+        grid-template-columns: 350px 1fr 350px;
+        gap: 40px;
+        align-items: start;
+    }
+
+    /* Cuadro selector de servicios */
+    .servicios-selector-box {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+    }
+
+    .servicios-box-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    .servicios-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .servicio-btn {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: white;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 15px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6c757d;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        text-align: left;
+    }
+
+        .servicio-btn i {
+            font-size: 1.4rem;
+            min-width: 20px;
+        }
+
+        .servicio-btn:hover {
+            border-color: #1451c4;
+            color: #1451c4;
+            box-shadow: 0 4px 12px rgba(20, 81, 196, 0.15);
+        }
+
+        .servicio-btn.active {
+            background: #1451c4;
+            border-color: #1451c4;
+            color: white;
+            box-shadow: 0 4px 15px rgba(20, 81, 196, 0.3);
+        }
+
+    /* Información resumida */
+    .servicio-info-resumida {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+    }
+
+    .servicio-nombre {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 15px;
+    }
+
+    .servicio-resumen {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #444;
+        margin: 0;
+    }
+
+    /* Imagen del servicio */
+    .servicio-imagen-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .servicio-imagen {
+        width: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+        height: 350px;
+        border: 4px solid #1451c4;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Sección de detalle */
+    .servicio-detalle-section {
+        padding: 80px 0;
+        background-color: white;
+    }
+
+    .detalle-container {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    /* Cuadro de contacto */
+    .contacto-servicio-box {
+        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+        text-align: center;
+    }
+
+    .contacto-servicio-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1451c4;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+    }
+
+        .contacto-servicio-title:hover {
+            color: #0d3a8f;
+            text-decoration: underline;
+        }
+
+    .contacto-servicio-logo {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: inline-block;
+        border: 2px solid rgba(20, 81, 196, 0.2);
+    }
+
+        .contacto-servicio-logo img {
+            max-width: 120px;
+            height: auto;
+        }
+
+    .contacto-servicio-divisor {
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(20, 81, 196, 0.3) 0%, #1451c4 50%, rgba(20, 81, 196, 0.3) 100%);
+        margin: 15px auto;
+        border-radius: 1px;
+    }
+
+    .contacto-servicio-texto {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1451c4;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+
+    .contacto-servicio-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contacto-servicio-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
+        color: #1451c4;
+        font-weight: 600;
+    }
+
+        .contacto-servicio-item i {
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+    /* Descripción del servicio */
+    .descripcion-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 30px;
+    }
+
+    .descripcion-content {
+        font-size: 1.1rem;
+        line-height: 2.1;
+        color: #444;
+    }
+
+        .descripcion-content p {
+            margin-bottom: 20px;
+        }
+
+        .descripcion-content ul {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        .descripcion-content li {
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+    /* Responsive */
+    @@media (max-width: 992px) {
+        .servicios-container
+
+    {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .servicio-imagen-box {
+        order: 3;
+    }
+
+    .detalle-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contacto-servicio-box {
+        order: 2;
+    }
+
+    .servicio-descripcion {
+        order: 1;
+    }
+
+    }
+
+    @@media (max-width: 768px) {
+        .servicios-hero-title
+
+    {
+        font-size: 3rem;
+    }
+
+    .servicios-hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .servicios-selector-box,
+    .servicio-info-resumida,
+    .contacto-servicio-box {
+        padding: 25px 20px;
+    }
+
+    .servicio-nombre {
+        font-size: 1.7rem;
+    }
+
+    .descripcion-title {
+        font-size: 2rem;
+    }
+
+    .servicio-btn {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    }
+
+    @@media (max-width: 480px) {
+        .servicios-hero-title
+
+    {
+        font-size: 2.5rem;
+    }
+
+    .servicio-nombre {
+        font-size: 1.5rem;
+    }
+
+    .descripcion-title {
+        font-size: 1.7rem;
+    }
+
+    .contacto-servicio-logo img {
+        max-width: 100px;
+    }
+
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.servicio-btn');
+        const servicioNombre = document.querySelector('.servicio-nombre');
+        const servicioResumen = document.querySelector('.servicio-resumen');
+        const servicioImagen = document.querySelector('.servicio-imagen');
+        const descripcionContent = document.querySelector('.descripcion-content');
+
+        const serviciosData = {
+            'ingenieria-inversa': {
+                nombre: 'Ingeniería inversa',
+                resumen: 'Transformamos piezas físicas en modelos digitales precisos, asegurando compatibilidad, funcionalidad y mejoras continuas en cada componente técnico.',
+                descripcion: `
+                    <p>Como expertos en soluciones industriales, ofrecemos servicios de ingeniería inversa para reproducir, optimizar o mejorar componentes técnicos a partir de piezas físicas ya existentes. Nuestro objetivo es ayudarte a recuperar diseños, adaptar tecnologías y reducir costos de producción sin comprometer la funcionalidad.</p>
+                    <p>Mediante el uso de herramientas avanzadas de digitalización 3D y análisis técnico, obtenemos modelos precisos que permiten:</p>
+                    <ul>
+                        <li>Replicar componentes industriales discontinuados</li>
+                        <li>Mejorar diseños para aumentar su rendimiento o durabilidad</li>
+                        <li>Adaptar piezas a nuevos entornos o sistemas</li>
+                        <li>Optimizar procesos de fabricación a partir del diseño original</li>
+                    </ul>
+                    <p>Nuestra experiencia abarca distintos sectores, desde maquinaria pesada hasta componentes de precisión. Con un enfoque colaborativo y técnico, garantizamos resultados confiables, ajustados a tus necesidades específicas.</p>
+                    <p>Confía en Nomad Industrial para transformar conocimiento en soluciones concretas, con respaldo tecnológico y compromiso profesional.</p>
+                `,
+                imagen: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            },
+            'diseno-3d': {
+                nombre: 'Diseño modelamiento 3D',
+                resumen: 'Creamos modelos tridimensionales precisos y detallados para visualización, prototipado y fabricación de componentes industriales.',
+                descripcion: `
+                    <p>Contenido placeholder para Diseño modelamiento 3D. Aquí irá la descripción detallada del servicio.</p>
+                    <p>Este contenido se reemplazará con la información real del servicio.</p>
+                `,
+                imagen: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            },
+            'levantamiento-3d': {
+                nombre: 'Levantamiento 3D',
+                resumen: 'Capturamos y documentamos espacios y estructuras existentes mediante tecnología 3D de alta precisión.',
+                descripcion: `
+                    <p>Contenido placeholder para Levantamiento 3D. Aquí irá la descripción detallada del servicio.</p>
+                    <p>Este contenido se reemplazará con la información real del servicio.</p>
+                `,
+                imagen: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            },
+            'nube-puntos': {
+                nombre: 'Proceso de nube de puntos',
+                resumen: 'Procesamos y analizamos datos de escaneo 3D para generar modelos digitales precisos y mediciones exactas.',
+                descripcion: `
+                    <p>Contenido placeholder para Proceso de nube de puntos. Aquí irá la descripción detallada del servicio.</p>
+                    <p>Este contenido se reemplazará con la información real del servicio.</p>
+                `,
+                imagen: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+            }
+        };
+
+        // Verificar parámetros URL al cargar la página
+        const urlParams = new URLSearchParams(window.location.search);
+        const servicioParam = urlParams.get('servicio');
+
+        if (servicioParam && serviciosData[servicioParam]) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            const targetButton = document.querySelector(`[data-servicio="${servicioParam}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+                cambiarServicio(servicioParam);
+            }
+        }
+
+        function cambiarServicio(servicioId) {
+            const data = serviciosData[servicioId];
+            if (data) {
+                servicioNombre.textContent = data.nombre;
+                servicioResumen.textContent = data.resumen;
+                servicioImagen.src = data.imagen;
+                descripcionContent.innerHTML = data.descripcion;
+            }
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const servicioId = this.getAttribute('data-servicio');
+
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                this.classList.add('active');
+
+                cambiarServicio(servicioId);
+            });
+        });
+    });
+</script>
