@@ -1,0 +1,261 @@
+﻿@page
+@model NomadIndustriesWeb.Pages.ContactoModel
+@{
+    ViewData["Title"] = "Contacto - Nomad Industrial";
+}
+
+<!-- Banner Principal -->
+<section class="contacto-hero-banner">
+    <div class="contacto-hero-content">
+        <h1 class="contacto-hero-title">CONTÁCTANOS</h1>
+        <p class="contacto-hero-subtitle">Estamos disponibles para responder tus dudas o coordinar una cotización personalizada.</p>
+    </div>
+</section>
+
+<!-- Sección Principal de Contacto -->
+<section class="contacto-main-section">
+    <div class="container">
+        <h2 class="contacto-section-title">Conversemos directamente</h2>
+
+        <div class="contacto-container">
+            <!-- Cuadro de Formulario -->
+            <div class="contacto-formulario-box">
+                @await Html.PartialAsync("_FormularioContacto")
+            </div>
+
+            <!-- Cuadro de Información de Contacto -->
+            <div class="contacto-info-box">
+                <h3 class="info-title">Información de contacto</h3>
+
+                <div class="contacto-datos">
+                    <div class="contacto-item">
+                        <i class="fas fa-phone"></i>
+                        <span class="contacto-text">+56912345678</span>
+                    </div>
+                    <div class="contacto-item">
+                        <i class="fas fa-envelope"></i>
+                        <span class="contacto-text">ventas@nomadspa.cl</span>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="mapa-container">
+                    <h4 class="mapa-title">Nuestra ubicación</h4>
+                    <div class="mapa-placeholder">
+                        <img src="https://via.placeholder.com/400x300/e9ecef/6c757d?text=Mapa+de+Ubicación" alt="Mapa de ubicación" class="mapa-imagen">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Banner Principal */
+    .contacto-hero-banner {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+        margin-top: -110px;
+        padding-top: 110px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+
+    .contacto-hero-title {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .contacto-hero-subtitle {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin: 0;
+        max-width: 800px;
+    }
+
+    /* Sección principal de contacto */
+    .contacto-main-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+    }
+
+    .contacto-section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1451c4;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .contacto-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    /* Cuadro de formulario - Ajustado para el formulario real */
+    .contacto-formulario-box {
+        background: white;
+        border-radius: 20px;
+        padding: 0; /* Removemos el padding porque el formulario ya tiene el suyo */
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+        overflow: hidden; /* Para que el border-radius se aplique correctamente */
+    }
+
+        /* Ajuste para que el formulario interno no tenga doble borde/sombra */
+        .contacto-formulario-box .Formulario-contacto {
+            box-shadow: none;
+            border: none;
+            border-radius: 20px; /* Mantener el mismo radio */
+        }
+
+    /* Cuadro de información de contacto */
+    .contacto-info-box {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+    }
+
+    .info-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .contacto-datos {
+        margin-bottom: 30px;
+    }
+
+    .contacto-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
+        border-radius: 12px;
+        border: 1px solid rgba(20, 81, 196, 0.1);
+    }
+
+        .contacto-item i {
+            font-size: 1.4rem;
+            color: #1451c4;
+            min-width: 20px;
+        }
+
+    .contacto-text {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1451c4;
+    }
+
+    /* Sección del mapa */
+    .mapa-container {
+        border-top: 2px solid #e9ecef;
+        padding-top: 25px;
+    }
+
+    .mapa-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .mapa-placeholder {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border: 2px solid #e9ecef;
+    }
+
+    .mapa-imagen {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Responsive */
+    @@media (max-width: 992px) {
+        .contacto-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .contacto-info-box {
+            order: 1;
+        }
+
+        .contacto-formulario-box {
+            order: 2;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .contacto-hero-title {
+            font-size: 3rem;
+        }
+
+        .contacto-hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .contacto-section-title {
+            font-size: 2rem;
+        }
+
+        .contacto-info-box {
+            padding: 30px 25px;
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+        }
+
+        .contacto-item {
+            padding: 12px 15px;
+        }
+
+        .contacto-text {
+            font-size: 1rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .contacto-hero-title {
+            font-size: 2.5rem;
+        }
+
+        .contacto-hero-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .contacto-section-title {
+            font-size: 1.7rem;
+        }
+
+        .contacto-info-box {
+            padding: 25px 20px;
+        }
+
+        .mapa-imagen {
+            height: 250px;
+        }
+    }
+</style>

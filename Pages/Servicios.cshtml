@@ -61,27 +61,35 @@
 <section class="servicio-detalle-section">
     <div class="container">
         <div class="detalle-container">
-            <!-- Cuadro de contacto -->
-            <div class="contacto-servicio-box">
-                <a href="/contacto" class="contacto-servicio-title">Contáctanos</a>
+            <!-- Columna izquierda: Contacto y Formulario -->
+            <div class="columna-contacto">
+                <!-- Cuadro de contactanos-->
+                <div class="contacto-servicio-box">
+                    <a href="/contacto" class="contacto-servicio-title">Contáctanos</a>
 
-                <div class="contacto-servicio-logo">
-                    <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    <div class="contacto-servicio-logo">
+                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    </div>
+
+                    <div class="contacto-servicio-divisor"></div>
+
+                    <p class="contacto-servicio-texto">¿Interesado en este servicio?<br>Contáctanos y hablemos.</p>
+
+                    <div class="contacto-servicio-info">
+                        <div class="contacto-servicio-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ventas@nomadspa.cl</span>
+                        </div>
+                        <div class="contacto-servicio-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+56912345678</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="contacto-servicio-divisor"></div>
-
-                <p class="contacto-servicio-texto">¿Interesado en este servicio?<br>Contáctanos y hablemos.</p>
-
-                <div class="contacto-servicio-info">
-                    <div class="contacto-servicio-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>nomadlindustrial@correo.com</span>
-                    </div>
-                    <div class="contacto-servicio-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+56912345678</span>
-                    </div>
+                <!-- Formulario de contacto -->
+                <div class="formulario-servicio-box">
+                    @await Html.PartialAsync("_FormularioContacto")
                 </div>
             </div>
 
@@ -270,6 +278,13 @@
         align-items: start;
     }
 
+    /* Columna de contacto y formulario */
+    .columna-contacto {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
     /* Cuadro de contacto */
     .contacto-servicio-box {
         background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
@@ -338,11 +353,28 @@
         font-size: 1.1rem;
         color: #1451c4;
         font-weight: 600;
+        justify-content: center;
     }
 
         .contacto-servicio-item i {
             font-size: 1.2rem;
             min-width: 20px;
+        }
+
+    /* Cuadro del formulario */
+    .formulario-servicio-box {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+        overflow: hidden;
+    }
+
+        
+        .formulario-servicio-box .Formulario-contacto {
+            box-shadow: none;
+            border: none;
+            border-radius: 20px;
         }
 
     /* Descripción del servicio */
@@ -375,83 +407,78 @@
 
     /* Responsive */
     @@media (max-width: 992px) {
-        .servicios-container
+        .servicios-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
 
-    {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+        .servicio-imagen-box {
+            order: 3;
+        }
 
-    .servicio-imagen-box {
-        order: 3;
-    }
+        .detalle-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
 
-    .detalle-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+        .columna-contacto {
+            order: 2;
+        }
 
-    .contacto-servicio-box {
-        order: 2;
-    }
-
-    .servicio-descripcion {
-        order: 1;
-    }
-
+        .servicio-descripcion {
+            order: 1;
+        }
     }
 
     @@media (max-width: 768px) {
-        .servicios-hero-title
+        .servicios-hero-title {
+            font-size: 3rem;
+        }
 
-    {
-        font-size: 3rem;
-    }
+        .servicios-hero-subtitle {
+            font-size: 1.2rem;
+        }
 
-    .servicios-hero-subtitle {
-        font-size: 1.2rem;
-    }
+        .servicios-selector-box,
+        .servicio-info-resumida,
+        .contacto-servicio-box {
+            padding: 25px 20px;
+        }
 
-    .servicios-selector-box,
-    .servicio-info-resumida,
-    .contacto-servicio-box {
-        padding: 25px 20px;
-    }
+        .servicio-nombre {
+            font-size: 1.7rem;
+        }
 
-    .servicio-nombre {
-        font-size: 1.7rem;
-    }
+        .descripcion-title {
+            font-size: 2rem;
+        }
 
-    .descripcion-title {
-        font-size: 2rem;
-    }
+        .servicio-btn {
+            padding: 12px 15px;
+            font-size: 0.95rem;
+        }
 
-    .servicio-btn {
-        padding: 12px 15px;
-        font-size: 0.95rem;
-    }
-
+        .columna-contacto {
+            gap: 20px;
+        }
     }
 
     @@media (max-width: 480px) {
-        .servicios-hero-title
+        .servicios-hero-title {
+            font-size: 2.5rem;
+        }
 
-    {
-        font-size: 2.5rem;
-    }
+        .servicio-nombre {
+            font-size: 1.5rem;
+        }
 
-    .servicio-nombre {
-        font-size: 1.5rem;
-    }
+        .descripcion-title {
+            font-size: 1.7rem;
+        }
 
-    .descripcion-title {
-        font-size: 1.7rem;
-    }
-
-    .contacto-servicio-logo img {
-        max-width: 100px;
-    }
-
+        .contacto-servicio-logo img {
+            max-width: 100px;
+        }
     }
 </style>
 

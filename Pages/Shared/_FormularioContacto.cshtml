@@ -1,0 +1,293 @@
+﻿@{
+    string layout = ViewData["Layout"]?.ToString() ?? "vertical";
+    string cssClass = layout == "horizontal" ? "Formulario-horizontal" : "Formulario-vertical";
+}
+
+<div class="Formulario-contacto @cssClass">
+    <h3 class="Formulario-titulo">Envíanos un mensaje</h3>
+    
+    <form class="Formulario-form" id="contactForm" method="post">
+        @Html.AntiForgeryToken()
+        <div class="Formulario-campos">
+            <div class="Campo-grupo">
+                <input type="text" id="asunto" name="asunto" placeholder="Asunto (obligatorio)" class="Campo-input" required>
+                <span class="Campo-error" id="asunto-error">Debes completar este campo</span>
+            </div>
+
+            <div class="Campo-grupo">
+                <input type="email" id="correo" name="correo" placeholder="Correo (obligatorio)" class="Campo-input" required>
+                <span class="Campo-error" id="correo-error">Debes completar este campo</span>
+            </div>
+
+            <div class="Campo-grupo">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="Campo-input">
+            </div>
+
+            <div class="Campo-grupo">
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" class="Campo-input">
+            </div>
+
+            <div class="Campo-grupo">
+                <textarea id="mensaje" name="mensaje" placeholder="Mensaje (obligatorio)" class="Campo-textarea" required></textarea>
+                <span class="Campo-error" id="mensaje-error">Debes completar este campo</span>
+            </div>
+        </div>
+        
+        <button type="submit" class="Formulario-boton">Enviar mensaje</button>
+        
+        <p class="Formulario-confirmacion">Nuestro equipo te contactará a la brevedad</p>
+    </form>
+</div>
+
+<style>
+  
+    .Formulario-contacto {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+    }
+
+    .Formulario-titulo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1451c4;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .Formulario-confirmacion {
+        font-size: 0.95rem;
+        color: #6c757d;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 0;
+        font-style: italic;
+    }
+
+    .Campo-grupo {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .Campo-input,
+    .Campo-textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .Campo-input:focus,
+    .Campo-textarea:focus {
+        outline: none;
+        border-color: #1451c4;
+        box-shadow: 0 0 0 3px rgba(20, 81, 196, 0.1);
+    }
+
+    .Campo-textarea {
+        height: 120px;
+        resize: vertical;
+        font-family: inherit;
+    }
+
+    .Campo-error {
+        display: none;
+        color: #dc3545;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        font-weight: 500;
+    }
+
+    .Campo-input.error,
+    .Campo-textarea.error {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+    }
+
+    .Campo-input.error + .Campo-error,
+    .Campo-textarea.error + .Campo-error {
+        display: block;
+    }
+
+    .Formulario-boton {
+        width: 100%;
+        background: #ffc107;
+        color: #000;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .Formulario-boton:hover {
+        background: #e0a800;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    }
+
+    
+    .Formulario-vertical .Formulario-campos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+    .Formulario-horizontal .Formulario-campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .Formulario-horizontal .Campo-grupo:last-child {
+        grid-column: 1 / -1;
+    }
+
+    
+    @@media (max-width: 768px) {
+        .Formulario-contacto {
+            padding: 30px 25px;
+        }
+
+        .Formulario-horizontal .Formulario-campos {
+            grid-template-columns: 1fr;
+        }
+
+        .Campo-input,
+        .Campo-textarea {
+            padding: 12px 15px;
+        }
+
+        .Formulario-titulo {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        
+        if (form) {
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                
+                clearErrors();
+                
+                let isValid = true;
+                
+               
+                const asunto = document.getElementById('asunto');
+                const correo = document.getElementById('correo');
+                const mensaje = document.getElementById('mensaje');
+                
+                // Validaciones
+                if (!asunto.value.trim()) {
+                    showError('asunto');
+                    isValid = false;
+                }
+                
+                
+                if (!correo.value.trim()) {
+                    showError('correo');
+                    isValid = false;
+                } else if (!isValidEmail(correo.value)) {
+                    showError('correo', 'Ingresa un correo válido');
+                    isValid = false;
+                }
+                
+                
+                if (!mensaje.value.trim()) {
+                    showError('mensaje');
+                    isValid = false;
+                }
+                
+                
+                if (isValid) {
+                    // Por ahora solo mostrar alerta
+                    alert('¡Mensaje enviado! Pronto implementaremos el envío real al servidor.');
+                    form.reset();
+                    
+                    // TODO: Implementar envío real cuando configures el backend
+                    // Descomentar y ajustar cuando tenga el endpoint listo:
+                    /*
+                    const formData = new FormData(form);
+                    fetch('/tu-endpoint-aqui', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('¡Mensaje enviado correctamente!');
+                            form.reset();
+                        }
+                    });
+                    */
+                }
+            });
+            
+            // Limpiar errores al escribir
+            const inputs = form.querySelectorAll('.Campo-input, .Campo-textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        this.classList.remove('error');
+                        const errorSpan = document.getElementById(this.id + '-error');
+                        if (errorSpan) {
+                            errorSpan.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+        
+        /
+        function showError(fieldId, customMessage) {
+            const field = document.getElementById(fieldId);
+            const error = document.getElementById(fieldId + '-error');
+            
+            if (field) {
+                field.classList.add('error');
+            }
+            
+            if (error) {
+                if (customMessage) {
+                    error.textContent = customMessage;
+                }
+                error.style.display = 'block';
+            }
+        }
+        
+        // Función para limpiar todos los errores
+        function clearErrors() {
+            const errorFields = document.querySelectorAll('.Campo-input.error, .Campo-textarea.error');
+            const errorMessages = document.querySelectorAll('.Campo-error');
+            
+            errorFields.forEach(field => field.classList.remove('error'));
+            errorMessages.forEach(error => {
+                error.style.display = 'none';
+                if (error.id === 'correo-error') {
+                    error.textContent = 'Debes completar este campo';
+                }
+            });
+        }
+        
+        // validar formato de email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+            return emailRegex.test(email);
+        }
+    });
+</script>

@@ -98,7 +98,7 @@
                         <img src="~/images/nomad-logo.png" alt="Nomad Industrial" class="contacto-logo" />
                     </div>
 
-                    <!-- Línea divisoria entre logo y texto -->
+                    
                     <div class="contacto-linea-divisoria"></div>
 
                     <p class="contacto-texto-grande">¿Interesado en este servicio?<br>Contáctanos y hablemos sobre tu proyecto.</p>
@@ -120,10 +120,12 @@
     </div>
 </section>
 
-<!-- formulario -->
-<section class="formulario-placeholder">
+<!-- Formulario -->
+<section class="formulario-fabricaciones-section">
     <div class="container">
-        <p class="placeholder-text">Agregar luego formulario</p>
+        <div class="formulario-fabricaciones-wrapper">
+            @await Html.PartialAsync("_FormularioContacto", null, new ViewDataDictionary(ViewData) { { "Layout", "horizontal" } })
+        </div>
     </div>
 </section>
 
@@ -359,7 +361,7 @@
         display: block;
     }
 
-    /* Línea divisoria */
+    
     .contacto-linea-divisoria {
         width: 200px;
         height: 3px;
@@ -404,21 +406,27 @@
         line-height: 1.2;
     }
 
-    /*  formulario */
-    .formulario-placeholder {
+    /* formulario */
+    .formulario-fabricaciones-section {
         background-color: #f8f9fa;
         padding: 80px 0;
-        text-align: center;
         border-top: 1px solid #e9ecef;
     }
 
-    .placeholder-text {
-        font-size: 1.2rem;
-        color: #6c757d;
-        font-style: italic;
-        margin: 0;
-        opacity: 0.7;
+    .formulario-fabricaciones-wrapper {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e9ecef;
+        overflow: hidden;
     }
+
+        
+        .formulario-fabricaciones-wrapper .Formulario-contacto {
+            box-shadow: none;
+            border: none;
+            border-radius: 20px;
+        }
 
     /* Responsive */
     @@media (max-width: 992px) {
@@ -441,6 +449,7 @@
         .contacto-derecha {
             width: 100%;
             max-width: none;
+            padding-top: 0;
         }
 
         .contacto-titulo {
@@ -452,15 +461,19 @@
         }
 
         .contacto-icono-simple {
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
 
         .contacto-texto-principal {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
         }
 
         .proceso-grid {
             grid-template-columns: repeat(3, auto);
+        }
+
+        .formulario-fabricaciones-section {
+            padding: 60px 0;
         }
     }
 
@@ -503,7 +516,11 @@
         }
 
         .contacto-item {
-            padding: 15px;
+            gap: 15px;
+        }
+
+        .formulario-fabricaciones-section {
+            padding: 40px 0;
         }
     }
 </style>
