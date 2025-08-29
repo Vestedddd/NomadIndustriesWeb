@@ -6,7 +6,7 @@
 <div class="Formulario-contacto @cssClass">
     <h3 class="Formulario-titulo">Envíanos un mensaje</h3>
     
-    <form class="Formulario-form" id="contactForm" method="post">
+    <form class="Formulario-form" id="contactForm-@(ViewData["FormId"] ?? "default")" method="post">
         @Html.AntiForgeryToken()
         <div class="Formulario-campos">
             <div class="Campo-grupo">
@@ -175,7 +175,7 @@
 <script>
     
     document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('contactForm');
+        const form = document.getElementById('contactForm-@(ViewData["FormId"] ?? "default")');
         
         if (form) {
             
@@ -186,11 +186,11 @@
                 clearErrors();
                 
                 let isValid = true;
-                
-               
-                const asunto = document.getElementById('asunto');
-                const correo = document.getElementById('correo');
-                const mensaje = document.getElementById('mensaje');
+
+
+                    const asunto = form.querySelector('input[name="asunto"]');
+                    const correo = form.querySelector('input[name="correo"]');
+                    const mensaje = form.querySelector('textarea[name="mensaje"]');
                 
                 // Validaciones
                 if (!asunto.value.trim()) {
@@ -212,30 +212,39 @@
                     showError('mensaje');
                     isValid = false;
                 }
-                
-                
-                if (isValid) {
-                    // Por ahora solo mostrar alerta
-                    alert('¡Mensaje enviado! Pronto implementaremos el envío real al servidor.');
-                    form.reset();
-                    
-                    // TODO: Implementar envío real cuando configures el backend
-                    // Descomentar y ajustar cuando tenga el endpoint listo:
-                    /*
-                    const formData = new FormData(form);
-                    fetch('/tu-endpoint-aqui', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('¡Mensaje enviado correctamente!');
-                            form.reset();
-                        }
-                    });
-                    */
-                }
+
+
+                    if (isValid) {
+        const formData = new FormData(form);
+
+        // Mostrar indicador de carga
+        const boton = form.querySelector('.Formulario-boton');
+        const textoOriginal = boton.textContent;
+        boton.textContent = 'Enviando...';
+        boton.disabled = true;
+
+        fetch(window.location.pathname, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('¡Mensaje enviado correctamente!');
+                form.reset();
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            alert('Error de conexión: ' + error.message);
+        })
+        .finally(() => {
+            // Restaurar botón
+            boton.textContent = textoOriginal;
+            boton.disabled = false;
+        });
+    }
             });
             
             // Limpiar errores al escribir
@@ -253,10 +262,10 @@
             });
         }
         
-        /
-        function showError(fieldId, customMessage) {
-            const field = document.getElementById(fieldId);
-            const error = document.getElementById(fieldId + '-error');
+        
+        function showError(fieldName, customMessage) {
+               const field = form.querySelector(`[name="${fieldName}"]`);
+               const error = form.querySelector(`#${fieldName}-error`);
             
             if (field) {
                 field.classList.add('error');
