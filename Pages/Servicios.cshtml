@@ -51,8 +51,8 @@
                     Diseñamos, fabricamos y suministramos soluciones industriales innovadoras a medida, integrando materiales nobles, tecnología IoT y sensores inteligentes para crear sistemas que optimizan procesos, reducen downtime y protegen activos industriales con implementación ágil y sin interrupciones operacionales.
                 </p>
                 <div class="btn-container">
-                    <button class="btn-ver-mas btn-metodologia" onclick="scrollToFabricaciones()">
-                        Ver metodología completa <i class="fas fa-arrow-down"></i>
+                    <button class="btn-ver-mas" id="btnVerMas" onclick="toggleDescripcionDetalle()">
+                        <span class="btn-text">Ver más</span> <i class="fas fa-chevron-down btn-icon"></i>
                     </button>
                 </div>
             </div>
@@ -60,6 +60,30 @@
             <!-- Imagen del servicio -->
             <div class="servicio-imagen-box">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Servicio seleccionado" class="servicio-imagen">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Descripción Detallada Desplegable -->
+<section id="descripcionDetalle" class="descripcion-detalle-section">
+    <div class="container">
+        <div class="descripcion-detalle-content">
+            <div class="descripcion-header">
+                <h2 id="descripcionTitulo" class="descripcion-titulo">Descripción del servicio</h2>
+                <button class="btn-cerrar-detalle" onclick="ocultarDescripcionDetalle()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="descripcion-body">
+                <div id="descripcionContenido" class="descripcion-contenido">
+                    <!-- Contenido será cargado dinámicamente -->
+                </div>
+                <div class="descripcion-contacto">
+                    <button class="btn-contacto-servicio" onclick="window.location.href='/Contacto'">
+                        <i class="fas fa-envelope"></i> Contactar para este servicio
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -74,7 +98,7 @@
     </div>
 </section>
 
-<!-- Contacto  -->
+<!-- Contacto -->
 <section class="contacto-servicios-compacto">
     <div class="container">
         <div class="contacto-compacto-grid">
@@ -104,597 +128,10 @@
 
             <div class="formulario-compacto-box">
                 @await Html.PartialAsync("_FormularioContacto", null, new ViewDataDictionary(ViewData) { { "FormId", "servicios" } })
-
             </div>
         </div>
     </div>
 </section>
-
-<!-- Sección Fabricaciones -->
-<section id="fabricaciones" class="fabricaciones-hero-banner">
-    <div class="fabricaciones-hero-content">
-        <h1 class="fabricaciones-hero-title">FABRICACIONES</h1>
-        <p class="fabricaciones-hero-subtitle">Soluciones Industriales Innovadoras de Extremo a Extremo</p>
-    </div>
-</section>
-
-<!-- Introducción Fabricaciones -->
-<section class="fabricaciones-intro container">
-    <h2 class="intro-title">Fabricaciones únicas, adaptadas a tu operación</h2>
-    <p class="intro-text">
-        En NOMAD INDUSTRIAL SpA transformamos desafíos industriales complejos en soluciones integrales que combinan ingeniería avanzada, materiales nobles, tecnología IoT y sostenibilidad. Nuestro enfoque integral abarca desde la conceptualización hasta el soporte post-implementación, garantizando continuidad operacional y protección de activos.
-    </p>
-</section>
-
-<!-- Materiales -->
-<section class="materiales-section">
-    <div class="container materiales-grid">
-        <div class="materiales-list">
-            <button class="material-btn active" data-img="inox" data-label="Acero inoxidable AISI 304, 316">
-                <i class="fas fa-draw-polygon"></i> Acero inoxidable
-            </button>
-            <button class="material-btn" data-img="frp" data-label="FRP (Plástico Reforzado con Fibra de Vidrio)">
-                <i class="fas fa-flask"></i> FRP
-            </button>
-            <button class="material-btn" data-img="carbono" data-label="Acero carbono ASTM A36">
-                <i class="fas fa-cog"></i> Acero carbono
-            </button>
-        </div>
-        <div class="materiales-image">
-            <div class="material-label">Acero inoxidable AISI 304, 316</div>
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Material seleccionado">
-        </div>
-    </div>
-</section>
-
-<!-- Metodología de Trabajo -->
-<section class="metodologia-section">
-    <div class="container">
-        <h2 class="metodologia-title">Metodología de Trabajo</h2>
-
-        <!-- CICLO VISUAL - Adaptativo sin scroll -->
-        <div class="ciclo-visual-container">
-            <!-- Vista para pantallas grandes y medianas -->
-            <div class="fases-linea-completa">
-                <!-- Fase 1 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="fase-numero">FASE 1</div>
-                    <div class="fase-nombre-corto">Análisis y Diagnóstico</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 2 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    <div class="fase-numero">FASE 2</div>
-                    <div class="fase-nombre-corto">Ingeniería de Materiales</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 3 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <div class="fase-numero">FASE 3</div>
-                    <div class="fase-nombre-corto">Diseño y Modelado 3D</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 4 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="fase-numero">FASE 4</div>
-                    <div class="fase-nombre-corto">Simulación Digital</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 5 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-vial"></i>
-                    </div>
-                    <div class="fase-numero">FASE 5</div>
-                    <div class="fase-nombre-corto">Prototipado y Testing</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 6 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-hammer"></i>
-                    </div>
-                    <div class="fase-numero">FASE 6</div>
-                    <div class="fase-nombre-corto">Fabricación</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 7 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-wrench"></i>
-                    </div>
-                    <div class="fase-numero">FASE 7</div>
-                    <div class="fase-nombre-corto">Implementación</div>
-                </div>
-
-                <!-- Flecha -->
-                <div class="flecha-horizontal">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-
-                <!-- Fase 8 -->
-                <div class="fase-visual">
-                    <div class="fase-circulo">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="fase-numero">FASE 8</div>
-                    <div class="fase-nombre-corto">Soporte Continuo</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- INFORMACIÓN DETALLADA DE FASES -->
-<section class="fases-detalladas-section">
-    <div class="container">
-        <h2 class="fases-detalladas-title">Descripción Detallada de Fases</h2>
-
-        <!-- Fase 1 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 1: Análisis y Diagnóstico de Necesidades</h3>
-                    <p class="fase-detallada-subtitulo">Identificamos y caracterizamos el desafío industrial</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Realizamos un análisis profundo del proceso actual, identificando puntos críticos, oportunidades de mejora y requerimientos específicos de eficiencia energética y sostenibilidad.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Levantamiento técnico in-situ</li>
-                            <li>Análisis de criticidad operacional</li>
-                            <li>Evaluación de impacto ambiental actual</li>
-                            <li>Identificación de requisitos IoT y monitoreo</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Diagnóstico técnico integral</li>
-                            <li>Matriz de requerimientos funcionales</li>
-                            <li>Análisis de criticidad y riesgos</li>
-                            <li>Propuesta de valor preliminar</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 2 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-atom"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 2: Investigación e Ingeniería de Materiales</h3>
-                    <p class="fase-detallada-subtitulo">Seleccionamos materiales nobles y tecnologías sostenibles</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Investigamos y seleccionamos materiales innovadores que superen las limitaciones tradicionales, priorizando durabilidad, eficiencia energética y bajo impacto ambiental.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Investigación de materiales avanzados</li>
-                            <li>Análisis de compatibilidad química y mecánica</li>
-                            <li>Evaluación de ciclo de vida (LCA)</li>
-                            <li>Selección de sensores y tecnología IoT</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Especificaciones técnicas de materiales</li>
-                            <li>Matriz de selección justificada</li>
-                            <li>Análisis de sostenibilidad</li>
-                            <li>Especificaciones de componentes IoT</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 3 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-cube"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 3: Diseño Conceptual y Modelado 3D</h3>
-                    <p class="fase-detallada-subtitulo">Creamos la solución mediante diseño avanzado</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Desarrollamos conceptos innovadores utilizando tecnología de nube de puntos, modelado 3D paramétrico y simulación avanzada para optimizar cada componente.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Diseño conceptual multi-variante</li>
-                            <li>Modelado 3D paramétrico</li>
-                            <li>Integración de sistemas IoT</li>
-                            <li>Análisis de manufacturabilidad</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Modelos 3D detallados</li>
-                            <li>Planos técnicos de fabricación</li>
-                            <li>Especificaciones de integración IoT</li>
-                            <li>Memoria de cálculo y diseño</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 4 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-calculator"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 4: Simulación y Validación Digital</h3>
-                    <p class="fase-detallada-subtitulo">Validamos rendimiento antes de la fabricación</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Ejecutamos simulaciones computacionales avanzadas para validar comportamiento estructural, térmico, fluidodinámico y de fatiga, asegurando óptimo rendimiento.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Simulación por elementos finitos (FEA)</li>
-                            <li>Análisis de fluidos computacional (CFD)</li>
-                            <li>Simulación térmica y vibratoria</li>
-                            <li>Validación de eficiencia energética</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Reportes de simulación validados</li>
-                            <li>Certificaciones de rendimiento</li>
-                            <li>Análisis de vida útil proyectada</li>
-                            <li>Recomendaciones de optimización</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 5 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-vial"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 5: Prototipado y Testing Industrial</h3>
-                    <p class="fase-detallada-subtitulo">Validamos en condiciones reales controladas</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Desarrollamos prototipos funcionales y ejecutamos pruebas rigurosas que simulan condiciones operacionales reales, incluyendo integración IoT completa.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Fabricación de prototipos funcionales</li>
-                            <li>Testing en condiciones operacionales</li>
-                            <li>Calibración de sensores IoT</li>
-                            <li>Pruebas de integración con sistemas existentes</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Prototipo funcional validado</li>
-                            <li>Protocolo de pruebas ejecutado</li>
-                            <li>Sistema IoT configurado y tested</li>
-                            <li>Informe de validación técnica</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 6 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-hammer"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 6: Fabricación y Control de Calidad</h3>
-                    <p class="fase-detallada-subtitulo">Producimos con estándares de excelencia industrial</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Ejecutamos la fabricación con procesos controlados, materiales certificados y control de calidad riguroso, asegurando trazabilidad completa y cumplimiento normativo.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Fabricación con procesos certificados</li>
-                            <li>Control dimensional y funcional</li>
-                            <li>Testing de componentes IoT</li>
-                            <li>Preparación para instalación ágil</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Componentes fabricados y certificados</li>
-                            <li>Certificados de calidad y trazabilidad</li>
-                            <li>Sistemas IoT pre-configurados</li>
-                            <li>Kit de instalación y documentación</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 7 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-wrench"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 7: Implementación y Puesta en Marcha</h3>
-                    <p class="fase-detallada-subtitulo">Instalamos sin interrumpir sus operaciones</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Implementamos la solución mediante metodologías ágiles que minimizan downtime, asegurando integración perfecta con sistemas existentes y activación inmediata del monitoreo IoT.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Instalación con mínimo impacto operacional</li>
-                            <li>Integración con sistemas existentes</li>
-                            <li>Configuración y calibración IoT</li>
-                            <li>Capacitación de personal operativo</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Sistema instalado y operativo</li>
-                            <li>Dashboard IoT configurado</li>
-                            <li>Personal capacitado</li>
-                            <li>Protocolos de operación y mantenimiento</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fase 8 Detallada -->
-        <div class="fase-detallada-item">
-            <div class="fase-detallada-header">
-                <div class="fase-detallada-icono">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="fase-detallada-info">
-                    <h3 class="fase-detallada-titulo">FASE 8: Monitoreo y Soporte Continuo</h3>
-                    <p class="fase-detallada-subtitulo">Acompañamos el éxito de su inversión</p>
-                </div>
-            </div>
-            <div class="fase-detallada-contenido">
-                <p>Proporcionamos monitoreo continuo mediante IoT, mantenimiento predictivo y soporte técnico especializado para maximizar el retorno de inversión y vida útil.</p>
-
-                <div class="fase-detallada-columnas">
-                    <div class="columna-actividades">
-                        <h4>Actividades:</h4>
-                        <ul>
-                            <li>Monitoreo 24/7 mediante IoT</li>
-                            <li>Análisis predictivo de datos</li>
-                            <li>Mantenimiento preventivo programado</li>
-                            <li>Optimización continua de rendimiento</li>
-                        </ul>
-                    </div>
-                    <div class="columna-entregables">
-                        <h4>Entregables:</h4>
-                        <ul>
-                            <li>Reportes de rendimiento periódicos</li>
-                            <li>Alertas tempranas predictivas</li>
-                            <li>Plan de mantenimiento optimizado</li>
-                            <li>Soporte técnico especializado</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Beneficios Diferenciales -->
-<section class="beneficios-section">
-    <div class="container">
-        <h2 class="beneficios-title">Beneficios Diferenciales</h2>
-        <div class="beneficios-grid">
-            <div class="beneficio-item">
-                <div class="beneficio-icono">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h4>Implementación sin Downtime</h4>
-                <p>Metodologías ágiles que no interrumpen operaciones</p>
-            </div>
-
-            <div class="beneficio-item">
-                <div class="beneficio-icono">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h4>Monitoreo Predictivo</h4>
-                <p>Tecnología IoT para anticipar fallas y optimizar mantenimiento</p>
-            </div>
-
-            <div class="beneficio-item">
-                <div class="beneficio-icono">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <h4>Materiales Nobles</h4>
-                <p>Soluciones durables y sostenibles que superan estándares tradicionales</p>
-            </div>
-
-            <div class="beneficio-item">
-                <div class="beneficio-icono">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <h4>Eficiencia Energética</h4>
-                <p>Diseños optimizados que reducen consumo y costos operacionales</p>
-            </div>
-
-            <div class="beneficio-item">
-                <div class="beneficio-icono">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h4>Protección Integral</h4>
-                <p>Cuidado simultáneo de equipos, personas y medioambiente</p>
-            </div>
-
-            <div class="beneficio-item">
-                <div class="beneficio-icono">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <h4>ROI Medible</h4>
-                <p>Retorno de inversión cuantificable y verificable</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contacto Fabricaciones -->
-<section class="contacto-cta">
-    <div class="contacto-header">
-        <div class="container">
-            <a href="/contacto" class="contacto-titulo-link">
-                <h2 class="contacto-titulo">Contáctanos</h2>
-            </a>
-        </div>
-    </div>
-
-    <div class="contacto-container">
-        <div class="container">
-            <div class="contacto-contenido">
-                <div class="contacto-izquierda">
-                    <div class="contacto-logo-container">
-                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" class="contacto-logo" />
-                    </div>
-
-                    <div class="contacto-linea-divisoria"></div>
-
-                    <p class="contacto-texto-grande">¿Interesado en este servicio?<br>Contáctanos y hablemos sobre tu proyecto.</p>
-                </div>
-
-                <div class="contacto-derecha">
-                    <div class="contacto-item">
-                        <i class="fas fa-envelope contacto-icono-simple"></i>
-                        <span class="contacto-texto-principal">ventas@nomadspa.cl</span>
-                    </div>
-
-                    <div class="contacto-item">
-                        <i class="fas fa-phone contacto-icono-simple"></i>
-                        <span class="contacto-texto-principal">+56912345678</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Formulario Fabricaciones -->
-<section class="formulario-fabricaciones-section">
-    <div class="container">
-        <div class="formulario-fabricaciones-wrapper">
-            @await Html.PartialAsync("_FormularioContacto", null, new ViewDataDictionary(ViewData) { { "Layout", "horizontal" }, { "FormId", "fabricaciones" } })
-        </div>
-    </div>
-</section>
-
-<!-- Modal para descripciones extendidas -->
-<div id="servicioModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 id="modalTitle">Título del Servicio</h2>
-            <span class="modal-close" onclick="cerrarModal()">&times;</span>
-        </div>
-        <div class="modal-body">
-            <div id="modalContent">
-                <!-- Contenido será cargado dinámicamente -->
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn-contacto-modal" onclick="window.location.href='/Contacto'">
-                <i class="fas fa-envelope"></i> Contactar para este servicio
-            </button>
-        </div>
-    </div>
-</div>
-
 <style>
     /* Banner Principal */
     .servicios-hero-banner {
@@ -820,7 +257,7 @@
     }
 
     .btn-container {
-        text-align: center;
+        text-align: left;
     }
 
     .btn-ver-mas {
@@ -844,23 +281,21 @@
             box-shadow: 0 4px 12px rgba(20, 81, 196, 0.3);
         }
 
-    .btn-metodologia {
-        background: #FFD700;
-        color: #333;
-        font-weight: bold;
-    }
-
-        .btn-metodologia:hover {
-            background: #FFC107;
-            color: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        .btn-ver-mas.expanded {
+            background: #28a745;
         }
 
-    .btn-normal {
-        align-self: flex-start;
-        margin-left: 0;
-    }
+            .btn-ver-mas.expanded:hover {
+                background: #218838;
+            }
+
+        .btn-ver-mas .btn-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-ver-mas.expanded .btn-icon {
+            transform: rotate(180deg);
+        }
 
     /* Imagen del servicio */
     .servicio-imagen-box {
@@ -878,103 +313,153 @@
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
 
-    /* Sección de detalle */
-    .servicio-detalle-section {
-        padding: 80px 0;
-        background-color: white;
+    /* Descripción Detallada Desplegable */
+    .descripcion-detalle-section {
+        background: white;
+        border-top: 3px solid #1451c4;
+        border-bottom: 1px solid #e9ecef;
+        padding: 0 0;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease-out;
     }
 
-    .detalle-container {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 40px;
-        align-items: start;
-    }
+        .descripcion-detalle-section.show {
+            opacity: 1;
+            max-height: 2000px;
+            padding: 60px 0;
+        }
 
-   
-    .columna-contacto {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    /* contacto */
-    .contacto-servicio-box {
-        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
+    .descripcion-detalle-content {
+        background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
         border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e9ecef;
-        text-align: center;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        border: 2px solid #1451c4;
     }
 
-    .contacto-servicio-title {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #1451c4;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 20px;
-        transition: color 0.3s ease;
-    }
-
-        .contacto-servicio-title:hover {
-            color: #0d3a8f;
-            text-decoration: underline;
-        }
-
-    .contacto-servicio-logo {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 15px;
-        display: inline-block;
-        border: 2px solid rgba(20, 81, 196, 0.2);
-    }
-
-        .contacto-servicio-logo img {
-            max-width: 120px;
-            height: auto;
-        }
-
-    .contacto-servicio-divisor {
-        width: 100px;
-        height: 2px;
-        background: linear-gradient(90deg, rgba(20, 81, 196, 0.3) 0%, #1451c4 50%, rgba(20, 81, 196, 0.3) 100%);
-        margin: 15px auto;
-        border-radius: 1px;
-    }
-
-    .contacto-servicio-texto {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #1451c4;
-        margin-bottom: 20px;
-        line-height: 1.4;
-    }
-
-    .contacto-servicio-info {
+    .descripcion-header {
+        background: linear-gradient(135deg, #1451c4 0%, #0f3a8c 100%);
+        color: white;
+        padding: 30px 40px;
         display: flex;
-        flex-direction: column;
-        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .contacto-servicio-item {
+    .descripcion-titulo {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin: 0;
+        color: white;
+    }
+
+    .btn-cerrar-detalle {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 1.1rem;
-        color: #1451c4;
-        font-weight: 600;
         justify-content: center;
     }
 
-        .contacto-servicio-item i {
-            font-size: 1.2rem;
-            min-width: 20px;
+        .btn-cerrar-detalle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
         }
 
-    
+    .descripcion-body {
+        padding: 50px 40px;
+    }
+
+    .descripcion-contenido {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 40px;
+        max-width: none;
+    }
+
+        .descripcion-contenido h3 {
+            color: #1451c4;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 30px 0 20px 0;
+            border-left: 4px solid #1451c4;
+            padding-left: 15px;
+        }
+
+        .descripcion-contenido h4 {
+            color: #1451c4;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+        }
+
+        .descripcion-contenido p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .descripcion-contenido ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+            .descripcion-contenido ul li {
+                margin-bottom: 10px;
+                position: relative;
+            }
+
+                .descripcion-contenido ul li::marker {
+                    color: #1451c4;
+                    font-weight: bold;
+                }
+
+        .descripcion-contenido strong {
+            color: #1451c4;
+            font-weight: 700;
+        }
+
+    .descripcion-contacto {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 2px solid rgba(20, 81, 196, 0.2);
+    }
+
+    .btn-contacto-servicio {
+        background: linear-gradient(135deg, #1451c4 0%, #0f3a8c 100%);
+        color: white;
+        border: none;
+        padding: 18px 35px;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 8px 25px rgba(20, 81, 196, 0.3);
+    }
+
+        .btn-contacto-servicio:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(20, 81, 196, 0.4);
+        }
+
+        .btn-contacto-servicio i {
+            font-size: 1.3rem;
+        }
+
+    /* Nota de servicios */
     .servicios-nota-section {
         background-color: #f8f9fa;
         padding: 30px 0;
@@ -989,7 +474,7 @@
         font-style: italic;
     }
 
-    /* Contacto  */
+    /* Contacto */
     .contacto-servicios-compacto {
         background-color: white;
         padding: 60px 0;
@@ -1021,15 +506,12 @@
         transition: all 0.3s ease;
     }
 
-    
-
     .contacto-compacto-title {
         font-size: 2rem;
         font-weight: bold;
         color: #1451c4;
         margin: 0;
-        cursor: pointer;.metodologia-descripcion
-
+        cursor: pointer;
         transition: all 0.3s ease;
     }
 
@@ -1102,1119 +584,6 @@
             border-radius: 20px;
         }
 
-    /* Fabricaciones */
-    .fabricaciones-hero-banner {
-        position: relative;
-        height: 60vh;
-        min-height: 400px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-    }
-
-    .fabricaciones-hero-title {
-        font-size: 4rem;
-        font-weight: bold;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .fabricaciones-hero-subtitle {
-        font-size: 1.4rem;
-        font-weight: 300;
-    }
-
-    /* Introducción */
-    .fabricaciones-intro {
-        margin: 60px auto;
-    }
-
-    .intro-title {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #1451c4;
-        margin-bottom: 15px;
-    }
-
-    .intro-text {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #444;
-    }
-
-    /* Materiales */
-    .materiales-section {
-        background-color: #e9f0fb;
-        padding: 60px 0;
-    }
-
-    .materiales-grid {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 30px;
-        align-items: start;
-    }
-
-    .materiales-list {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .material-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background-color: rgba(20, 81, 196, 0.1);
-        border: none;
-        padding: 15px;
-        font-size: 1.1rem;
-        border-radius: 10px;
-        color: rgba(0,0,0,0.5);
-        font-weight: bold;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-        .material-btn i {
-            font-size: 1.3rem;
-        }
-
-        .material-btn:hover,
-        .material-btn.active {
-            background-color: #1451c4;
-            color: white;
-        }
-
-    .materiales-image {
-        position: relative;
-    }
-
-    .material-label {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background: rgba(0,0,0,0.6);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 4px;
-        font-size: 0.95rem;
-    }
-
-    .materiales-image img {
-        width: 100%;
-        border-radius: 8px;
-        border: 5px solid #1451c4;
-        object-fit: cover;
-    }
-
-    /* Metodología - Descripción general */
-    .metodologia-section {
-        background-color: white;
-        padding: 80px 0;
-    }
-
-    .metodologia-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #1451c4;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    
-    /* Fases*/
-    .ciclo-visual-container {
-        margin-bottom: 80px;
-        padding: 40px 0;
-    }
-
-    .fases-linea-completa {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .fase-visual {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        flex: 1;
-        max-width: 140px;
-    }
-
-    .fase-circulo {
-        width: 90px;
-        height: 90px;
-        border: 4px solid #1451c4;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: #1451c4;
-        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
-        margin-bottom: 15px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(20, 81, 196, 0.2);
-    }
-
-    .fase-visual:hover .fase-circulo {
-        background: #1451c4;
-        color: white;
-        transform: scale(1.1);
-        box-shadow: 0 8px 25px rgba(20, 81, 196, 0.4);
-    }
-
-    .fase-numero {
-        font-size: 0.85rem;
-        font-weight: bold;
-        color: #1451c4;
-        margin-bottom: 8px;
-        letter-spacing: 1px;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: #333;
-        line-height: 1.3;
-        text-align: center;
-        word-wrap: break-word;
-        hyphens: auto;
-    }
-
-    .flecha-horizontal {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        color: #1451c4;
-        margin-top: -30px;
-        flex: 0 0 auto;
-        width: 40px;
-    }
-
-    /* Responsive  */
-    @@media (max-width: 1200px) {
-        .fase-circulo
-
-    {
-        width: 75px;
-        height: 75px;
-        font-size: 1.7rem;
-    }
-
-    .fase-visual {
-        max-width: 110px;
-    }
-
-    .flecha-horizontal {
-        font-size: 1.6rem;
-        width: 30px;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.85rem;
-    }
-
-    }
-
-    @@media (max-width: 992px) {
-        .metodologia-title
-
-    {
-        font-size: 2.2rem;
-    }
-
-    .fase-circulo {
-        width: 65px;
-        height: 65px;
-        font-size: 1.5rem;
-    }
-
-    .fase-visual {
-        max-width: 90px;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.8rem;
-        line-height: 1.2;
-    }
-
-    .fase-numero {
-        font-size: 0.75rem;
-    }
-
-    .flecha-horizontal {
-        font-size: 1.4rem;
-        width: 25px;
-    }
-
-    .fases-linea-completa {
-        padding: 0 15px;
-    }
-
-    }
-
-    @@media (max-width: 768px) {
-        .metodologia-title
-
-    {
-        font-size: 2rem;
-    }
-
-    .metodologia-descripcion {
-        font-size: 1rem;
-        margin-bottom: 40px;
-        padding: 0 20px;
-    }
-
-    .fase-circulo {
-        width: 55px;
-        height: 55px;
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-    }
-
-    .fase-visual {
-        max-width: 70px;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.7rem;
-        line-height: 1.1;
-    }
-
-    .fase-numero {
-        font-size: 0.7rem;
-        margin-bottom: 5px;
-    }
-
-    .flecha-horizontal {
-        font-size: 1.2rem;
-        width: 20px;
-    }
-
-    .fases-linea-completa {
-        padding: 0 10px;
-    }
-
-    }
-
-    @@media (max-width: 640px) {
-        
-        .fases-linea-completa
-
-    {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .fila-movil {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    .fase-visual {
-        max-width: 80px;
-    }
-
-    .fase-circulo {
-        width: 60px;
-        height: 60px;
-        font-size: 1.4rem;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.75rem;
-    }
-
-    .flecha-horizontal {
-        width: 25px;
-        font-size: 1.3rem;
-    }
-
-    }
-
-    @@media (max-width: 480px) {
-        .ciclo-visual-container
-
-    {
-        padding: 20px 0;
-        margin-bottom: 40px;
-    }
-
-    .metodologia-title {
-        font-size: 1.8rem;
-    }
-
-    .fase-circulo {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-    }
-
-    .fase-visual {
-        max-width: 65px;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.65rem;
-        line-height: 1.0;
-    }
-
-    .fase-numero {
-        font-size: 0.65rem;
-        margin-bottom: 3px;
-    }
-
-    .flecha-horizontal {
-        font-size: 1.1rem;
-        width: 20px;
-    }
-
-    }
-
-    /* Fases detalladas */
-    .fases-detalladas-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 80px 0;
-    }
-
-    .fases-detalladas-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #1451c4;
-        text-align: center;
-        margin-bottom: 60px;
-    }
-
-    .fase-detallada-item {
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        margin-bottom: 40px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-    }
-
-        .fase-detallada-item:hover {
-            border-color: #1451c4;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(20, 81, 196, 0.15);
-        }
-
-    .fase-detallada-header {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        margin-bottom: 30px;
-        padding-bottom: 20px;
-        border-bottom: 2px solid #e9ecef;
-    }
-
-    .fase-detallada-icono {
-        width: 80px;
-        height: 80px;
-        border: 3px solid #1451c4;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: #1451c4;
-        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
-        flex-shrink: 0;
-    }
-
-    .fase-detallada-info h3 {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #1451c4;
-        margin-bottom: 8px;
-        line-height: 1.3;
-    }
-
-    .fase-detallada-subtitulo {
-        font-size: 1.2rem;
-        color: #666;
-        font-weight: 500;
-        margin: 0;
-    }
-
-    .fase-detallada-contenido {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #444;
-    }
-
-        .fase-detallada-contenido > p {
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-    .fase-detallada-columnas {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        margin-top: 25px;
-    }
-
-    .columna-actividades,
-    .columna-entregables {
-        background: #f8f9fa;
-        border-radius: 15px;
-        padding: 25px;
-        border-left: 4px solid #1451c4;
-    }
-
-        .columna-actividades h4,
-        .columna-entregables h4 {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1451c4;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .columna-actividades ul,
-        .columna-entregables ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .columna-actividades li,
-        .columna-entregables li {
-            padding: 8px 0;
-            padding-left: 20px;
-            position: relative;
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-            .columna-actividades li:before {
-                content: "▶";
-                color: #1451c4;
-                position: absolute;
-                left: 0;
-                font-size: 0.8rem;
-            }
-
-            .columna-entregables li:before {
-                content: "✓";
-                color: #28a745;
-                position: absolute;
-                left: 0;
-                font-weight: bold;
-            }
-
-    /* Beneficios Diferenciales */
-    .beneficios-section {
-        background: white;
-        padding: 80px 0;
-        border-top: 1px solid #e9ecef;
-    }
-
-    .beneficios-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #1451c4;
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    .beneficios-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .beneficio-item {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 15px;
-        padding: 30px 25px;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-    }
-
-        .beneficio-item:hover {
-            transform: translateY(-8px);
-            border-color: #1451c4;
-            box-shadow: 0 15px 40px rgba(20, 81, 196, 0.15);
-            background: white;
-        }
-
-    .beneficio-icono {
-        width: 70px;
-        height: 70px;
-        border: 3px solid #1451c4;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        margin: 0 auto 20px;
-        color: #1451c4;
-        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
-        transition: all 0.3s ease;
-    }
-
-    .beneficio-item:hover .beneficio-icono {
-        background: #1451c4;
-        color: white;
-        transform: scale(1.1);
-    }
-
-    .beneficio-item h4 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 15px;
-    }
-
-    .beneficio-item p {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    /* Responsive */
-    @@media (max-width: 1200px) {
-        .fila-fases
-
-    {
-        gap: 30px;
-    }
-
-    .fase-circulo {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
-    }
-
-    .fase-detallada-columnas {
-        gap: 25px;
-    }
-
-    }
-
-    @@media (max-width: 992px) {
-        .fila-fases
-
-    {
-        flex-wrap: wrap;
-        gap: 40px 20px;
-    }
-
-    .flecha-horizontal {
-        display: none;
-    }
-
-    .conexion-vertical {
-        display: none;
-    }
-
-    .fila-superior,
-    .fila-inferior {
-        margin-bottom: 30px;
-        margin-top: 0;
-    }
-
-    .fase-detallada-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .fase-detallada-columnas {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .beneficios-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-    }
-
-    }
-
-    @@media (max-width: 768px) {
-        .metodologia-title, .fases-detalladas-title, .beneficios-title
-
-    {
-        font-size: 2rem;
-    }
-
-    .fila-fases {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .fase-circulo {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8rem;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.9rem;
-        max-width: 100px;
-    }
-
-    .fase-detallada-item {
-        padding: 25px 20px;
-        margin-bottom: 30px;
-    }
-
-    .fase-detallada-icono {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-
-    .fase-detallada-info h3 {
-        font-size: 1.5rem;
-    }
-
-    .fase-detallada-subtitulo {
-        font-size: 1rem;
-    }
-
-    .beneficios-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    }
-
-    @@media (max-width: 480px) {
-        .ciclo-visual-container
-
-    {
-        padding: 20px 0;
-        margin-bottom: 40px;
-    }
-
-    .fila-fases {
-        gap: 20px;
-    }
-
-    .fase-circulo {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-
-    .fase-nombre-corto {
-        font-size: 0.8rem;
-        max-width: 80px;
-    }
-
-    .fase-detallada-item {
-        padding: 20px 15px;
-    }
-
-    .fase-detallada-info h3 {
-        font-size: 1.3rem;
-    }
-
-    .columna-actividades,
-    .columna-entregables {
-        padding: 20px;
-    }
-
-    .metodologia-title,
-    .fases-detalladas-title,
-    .beneficios-title {
-        font-size: 1.8rem;
-    }
-
-    }
-
-/* Beneficios Diferenciales */
-.beneficios-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 80px 0;
-    margin-top: 40px;
-}
-
-.beneficios-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1451c4;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.beneficios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.beneficio-item {
-    background: white;
-    border-radius: 15px;
-    padding: 30px 25px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.beneficio-item:hover {
-    transform: translateY(-8px);
-    border-color: #1451c4;
-    box-shadow: 0 15px 40px rgba(20, 81, 196, 0.15);
-}
-
-.beneficio-icono {
-    width: 70px;
-    height: 70px;
-    border: 3px solid #1451c4;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin: 0 auto 20px;
-    color: #1451c4;
-    background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
-    transition: all 0.3s ease;
-}
-
-.beneficio-item:hover .beneficio-icono {
-    background: #1451c4;
-    color: white;
-    transform: scale(1.1);
-}
-
-.beneficio-item h4 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.beneficio-item p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Responsive */
-@@media (max-width: 1200px) {
-    .fases-lineales-container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .fase-item-lineal {
-        min-width: 250px;
-        flex: none;
-    }
-    
-    .fase-conexion-lineal {
-        display: none;
-    }
-    
-    .conexion-vertical-fases {
-        display: none;
-    }
-    
-    .fases-segunda-linea {
-        flex-direction: row;
-        margin-top: 20px;
-    }
-}
-
-@@media (max-width: 768px) {
-    .metodologia-title {
-        font-size: 2rem;
-    }
-    
-    .fase-item-lineal {
-        min-width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    .beneficios-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .beneficios-title {
-        font-size: 2rem;
-    }
-}
-
-    /* Contacto Fabricaciones */
-    .contacto-cta {
-        background: white;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
-
-    .contacto-header {
-        background-color: #1451c4;
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    .contacto-titulo-link {
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-        .contacto-titulo-link:hover {
-            transform: translateY(-2px);
-        }
-
-    .contacto-titulo {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: white;
-        margin: 0;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-        .contacto-titulo:hover {
-            color: #f0f8ff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-    .contacto-container {
-        background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
-        padding: 50px 0;
-    }
-
-    .contacto-contenido {
-        display: flex;
-        align-items: flex-start;
-        gap: 40px;
-    }
-
-    .contacto-izquierda {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .contacto-logo-container {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 15px;
-        padding: 15px 20px;
-        border: 2px solid rgba(20, 81, 196, 0.2);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .contacto-logo {
-        max-width: 180px;
-        height: auto;
-        display: block;
-    }
-
-    .contacto-linea-divisoria {
-        width: 200px;
-        height: 3px;
-        background: linear-gradient(90deg, rgba(20, 81, 196, 0.3) 0%, #1451c4 50%, rgba(20, 81, 196, 0.3) 100%);
-        border-radius: 2px;
-        margin: 10px 0;
-    }
-
-    .contacto-texto-grande {
-        font-size: 2rem;
-        font-weight: bold;
-        line-height: 1.3;
-        color: #1451c4;
-        text-align: center;
-    }
-
-    .contacto-derecha {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-        justify-content: center;
-        padding-top: 80px;
-    }
-
-    .contacto-item {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .contacto-icono-simple {
-        font-size: 3rem;
-        color: #1451c4;
-    }
-
-    .contacto-texto-principal {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #1451c4;
-        line-height: 1.2;
-    }
-
-    /* Formulario Fabricaciones */
-    .formulario-fabricaciones-section {
-        background-color: #f8f9fa;
-        padding: 80px 0;
-        border-top: 1px solid #e9ecef;
-    }
-
-    .formulario-fabricaciones-wrapper {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e9ecef;
-        overflow: hidden;
-    }
-
-        .formulario-fabricaciones-wrapper .Formulario-contacto {
-            box-shadow: none;
-            border: none;
-            border-radius: 20px;
-        }
-
-    /* Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(5px);
-    }
-
-    .modal-content {
-        background-color: white;
-        margin: 2% auto;
-        padding: 0;
-        border-radius: 20px;
-        width: 90%;
-        max-width: 800px;
-        max-height: 90vh;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        animation: modalSlideIn 0.3s ease;
-    }
-
-    @@keyframes modalSlideIn {
-        from
-
-    {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    }
-
-    .modal-header {
-        background: linear-gradient(135deg, #1451c4 0%, #0f3a8c 100%);
-        color: white;
-        padding: 25px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-    .modal-close {
-        font-size: 2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 0 10px;
-        border-radius: 50%;
-    }
-
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-    .modal-body {
-        padding: 30px;
-        max-height: 60vh;
-        overflow-y: auto;
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #444;
-    }
-
-    .modal-footer {
-        background: #f8f9fa;
-        padding: 20px 30px;
-        border-top: 1px solid #e9ecef;
-        text-align: center;
-    }
-
-    .btn-contacto-modal {
-        background: #1451c4;
-        color: white;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-        .btn-contacto-modal:hover {
-            background: #0f3a8c;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(20, 81, 196, 0.3);
-        }
-
     /* Responsive */
     @@media (max-width: 992px) {
         .servicios-container
@@ -2228,52 +597,33 @@
         order: 3;
     }
 
-    .detalle-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .columna-contacto {
-        order: 2;
-    }
-
-    .servicio-descripcion {
-        order: 1;
-    }
-
     .contacto-compacto-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
-    .fases-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .descripcion-header {
+        padding: 25px 30px;
     }
 
-    .fase-arrow {
-        display: none;
+    .descripcion-body {
+        padding: 40px 30px;
     }
 
-    .conexion-filas {
-        display: none;
-    }
-
-    .materiales-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .descripcion-titulo {
+        font-size: 1.8rem;
     }
 
     }
 
     @@media (max-width: 768px) {
-        .servicios-hero-title, .fabricaciones-hero-title
+        .servicios-hero-title
 
     {
         font-size: 3rem;
     }
 
-    .servicios-hero-subtitle, .fabricaciones-hero-subtitle {
+    .servicios-hero-subtitle {
         font-size: 1.2rem;
     }
 
@@ -2287,17 +637,9 @@
         font-size: 1.7rem;
     }
 
-    .descripcion-title {
-        font-size: 2rem;
-    }
-
     .servicio-btn {
         padding: 12px 15px;
         font-size: 0.95rem;
-    }
-
-    .columna-contacto {
-        gap: 20px;
     }
 
     .contacto-compacto-grid {
@@ -2305,55 +647,31 @@
         gap: 20px;
     }
 
-    .contacto-contenido {
+    .descripcion-header {
+        padding: 20px 25px;
         flex-direction: column;
-        gap: 30px;
-    }
-
-    .contacto-derecha {
-        width: 100%;
-        max-width: none;
-        padding-top: 0;
-    }
-
-    .contacto-titulo {
-        font-size: 2rem;
-    }
-
-    .contacto-texto-grande {
-        font-size: 1.7rem;
-    }
-
-    .contacto-icono-simple {
-        font-size: 2.5rem;
-    }
-
-    .contacto-texto-principal {
-        font-size: 1.8rem;
-    }
-
-    .fases-grid {
-        grid-template-columns: 1fr;
         gap: 15px;
+        text-align: center;
     }
 
-    .modal-content {
-        width: 95%;
-        margin: 5% auto;
+    .descripcion-body {
+        padding: 30px 25px;
     }
 
-    .modal-header {
-        padding: 20px;
+    .descripcion-titulo {
+        font-size: 1.6rem;
     }
 
-    .modal-body {
-        padding: 20px;
+    .btn-cerrar-detalle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 
     }
 
     @@media (max-width: 480px) {
-        .servicios-hero-title, .fabricaciones-hero-title
+        .servicios-hero-title
 
     {
         font-size: 2.5rem;
@@ -2363,40 +681,35 @@
         font-size: 1.5rem;
     }
 
-    .descripcion-title {
-        font-size: 1.7rem;
-    }
-
-    .contacto-servicio-logo img {
+    .contacto-compacto-logo img {
         max-width: 100px;
     }
 
-    .contacto-titulo {
-        font-size: 1.8rem;
+    .descripcion-header {
+        padding: 15px 20px;
     }
 
-    .contacto-texto-grande {
-        font-size: 1.5rem;
+    .descripcion-body {
+        padding: 25px 20px;
     }
 
-    .contacto-icono-simple {
-        font-size: 2rem;
-    }
-
-    .contacto-texto-principal {
-        font-size: 1.1rem;
+    .descripcion-titulo {
+        font-size: 1.4rem;
     }
 
     }
 </style>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const buttons = document.querySelectorAll('.servicio-btn');
         const servicioNombre = document.querySelector('.servicio-nombre');
         const servicioResumen = document.querySelector('.servicio-resumen');
         const servicioImagen = document.querySelector('.servicio-imagen');
-        const btnContainer = document.querySelector('.btn-container') || document.querySelector('.servicio-info-resumida').lastElementChild;
+        const btnContainer = document.querySelector('.btn-container');
+
+        // Estado global
+        let servicioActivo = 'proyectos-customizada';
+        let descripcionAbierta = false;
 
         const serviciosData = {
             'proyectos-customizada': {
@@ -2426,11 +739,71 @@
             }
         };
 
+        // Contenido extendido de servicios (placeholders)
+        const contenidoExtendido = {
+            'proyectos-customizada': `
+                <h3>Descripción Extendida - Proyectos de Ingeniería Customizada</h3>
+                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
+                <p>Este es un placeholder donde se insertará toda la información detallada del servicio, incluyendo metodología, fases, beneficios, casos de uso, etc.</p>
+                <ul>
+                    <li>Metodología completa del servicio</li>
+                    <li>Fases de implementación</li>
+                    <li>Beneficios y resultados esperados</li>
+                    <li>Casos de éxito</li>
+                </ul>
+            `,
+            'ingenieria-inversa': `
+                <h3>Descripción Extendida - Ingeniería Inversa</h3>
+                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
+                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de ingeniería inversa.</p>
+                <ul>
+                    <li>Proceso de análisis de componentes</li>
+                    <li>Tecnologías de digitalización</li>
+                    <li>Optimización de diseños</li>
+                    <li>Casos de aplicación</li>
+                </ul>
+            `,
+            'levantamiento-3d': `
+                <h3>Descripción Extendida - Levantamiento 3D Industrial</h3>
+                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
+                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de levantamiento 3D.</p>
+                <ul>
+                    <li>Tecnologías de escaneo utilizadas</li>
+                    <li>Precisión y alcance</li>
+                    <li>Aplicaciones industriales</li>
+                    <li>Entregables y formatos</li>
+                </ul>
+            `,
+            'nube-puntos': `
+                <h3>Descripción Extendida - Procesamiento Nube de Puntos</h3>
+                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
+                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de procesamiento.</p>
+                <ul>
+                    <li>Algoritmos de procesamiento</li>
+                    <li>Conversión a modelos CAD</li>
+                    <li>Software especializado</li>
+                    <li>Formatos de salida</li>
+                </ul>
+            `,
+            'monitoreo-iot': `
+                <h3>Descripción Extendida - Monitoreo IoT y Mantenimiento Predictivo</h3>
+                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
+                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de IoT.</p>
+                <ul>
+                    <li>Sensores y tecnologías IoT</li>
+                    <li>Plataformas de monitoreo</li>
+                    <li>Algoritmos predictivos</li>
+                    <li>Beneficios del mantenimiento predictivo</li>
+                </ul>
+            `
+        };
+
         // Verificar parámetros URL al cargar la página
         const urlParams = new URLSearchParams(window.location.search);
         const servicioParam = urlParams.get('servicio');
 
         if (servicioParam && serviciosData[servicioParam]) {
+            servicioActivo = servicioParam;
             buttons.forEach(btn => btn.classList.remove('active'));
             const targetButton = document.querySelector(`[data-servicio="${servicioParam}"]`);
             if (targetButton) {
@@ -2440,40 +813,30 @@
         }
 
         function cambiarServicio(servicioId) {
+            servicioActivo = servicioId;
             const data = serviciosData[servicioId];
+
             if (data) {
                 servicioNombre.textContent = data.nombre;
                 servicioResumen.textContent = data.resumen;
                 servicioImagen.src = data.imagen;
 
-                
-                const btnContainer = document.querySelector('.servicio-info-resumida .btn-container') ||
-                                   document.querySelector('.servicio-info-resumida').children[document.querySelector('.servicio-info-resumida').children.length - 1];
-
-                
-                btnContainer.innerHTML = '';
-
-               
-                if (servicioId === 'proyectos-customizada') {
-                    btnContainer.className = 'btn-container';
-                    btnContainer.style.textAlign = 'center';
-                    btnContainer.innerHTML = `
-                        <button class="btn-ver-mas btn-metodologia" onclick="scrollToFabricaciones()">
-                            Ver metodología completa <i class="fas fa-arrow-down"></i>
-                        </button>
-                    `;
-                } else {
-                    btnContainer.className = '';
-                    btnContainer.style.textAlign = 'left';
-                    btnContainer.innerHTML = `
-                        <button class="btn-ver-mas btn-normal" onclick="abrirModal('${servicioId}')">
-                            Ver más <i class="fas fa-arrow-right"></i>
-                        </button>
-                    `;
+                // Si la descripción está abierta, actualizar su contenido
+                if (descripcionAbierta) {
+                    actualizarContenidoDescripcion();
                 }
             }
         }
 
+        function actualizarContenidoDescripcion() {
+            const descripcionTitulo = document.getElementById('descripcionTitulo');
+            const descripcionContenido = document.getElementById('descripcionContenido');
+
+            descripcionTitulo.textContent = `Descripción del servicio - ${serviciosData[servicioActivo].nombre}`;
+            descripcionContenido.innerHTML = contenidoExtendido[servicioActivo] || '<p>Contenido no disponible</p>';
+        }
+
+        // Event listeners para botones de servicios
         buttons.forEach(button => {
             button.addEventListener('click', function() {
                 const servicioId = this.getAttribute('data-servicio');
@@ -2483,82 +846,53 @@
             });
         });
 
-        // Scroll automático a fabricaciones
-        if (window.location.hash === '#fabricaciones') {
-            setTimeout(() => {
-                document.getElementById('fabricaciones').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
-    });
+        // Función global para toggle de descripción
+        window.toggleDescripcionDetalle = function() {
+            const descripcionSection = document.getElementById('descripcionDetalle');
+            const btnVerMas = document.getElementById('btnVerMas');
+            const btnText = btnVerMas.querySelector('.btn-text');
+            const btnIcon = btnVerMas.querySelector('.btn-icon');
 
-    
-    function scrollToFabricaciones() {
-        document.getElementById('fabricaciones').scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
+            if (!descripcionAbierta) {
+                // Abrir descripción
+                descripcionAbierta = true;
+                actualizarContenidoDescripcion();
+                descripcionSection.classList.add('show');
+                btnVerMas.classList.add('expanded');
+                btnText.textContent = 'Ver menos';
+                btnIcon.style.transform = 'rotate(180deg)';
 
-    
-    function abrirModal(servicioId) {
-        const modal = document.getElementById('servicioModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalContent = document.getElementById('modalContent');
-
-        
-        const contenidoExtendido = {
-            'proyectos-customizada': '<p><strong>Descripción extendida del servicio pendiente de entrega.</strong></p><p>Aquí irá el contenido completo del servicio una vez que se proporcione la versión extendida.</p>',
-            'ingenieria-inversa': '<p><strong>Descripción extendida del servicio pendiente de entrega.</strong></p><p>Aquí irá el contenido completo del servicio una vez que se proporcione la versión extendida.</p>',
-            'levantamiento-3d': '<p><strong>Descripción extendida del servicio pendiente de entrega.</strong></p><p>Aquí irá el contenido completo del servicio una vez que se proporcione la versión extendida.</p>',
-            'nube-puntos': '<p><strong>Descripción extendida del servicio pendiente de entrega.</strong></p><p>Aquí irá el contenido completo del servicio una vez que se proporcione la versión extendida.</p>',
-            'monitoreo-iot': '<p><strong>Descripción extendida del servicio pendiente de entrega.</strong></p><p>Aquí irá el contenido completo del servicio una vez que se proporcione la versión extendida.</p>'
+                // Scroll suave hacia la descripción
+                setTimeout(() => {
+                    descripcionSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 200);
+            } else {
+                // Cerrar descripción
+                ocultarDescripcionDetalle();
+            }
         };
 
-        const serviciosData = {
-            'proyectos-customizada': 'Proyectos de Ingeniería Customizada',
-            'ingenieria-inversa': 'Ingeniería Inversa',
-            'levantamiento-3d': 'Levantamiento 3D Industrial',
-            'nube-puntos': 'Procesamiento Nube de Puntos',
-            'monitoreo-iot': 'Monitoreo IoT y Mantenimiento Predictivo'
+        // Función global para ocultar descripción
+        window.ocultarDescripcionDetalle = function() {
+            const descripcionSection = document.getElementById('descripcionDetalle');
+            const btnVerMas = document.getElementById('btnVerMas');
+            const btnText = btnVerMas.querySelector('.btn-text');
+            const btnIcon = btnVerMas.querySelector('.btn-icon');
+
+            descripcionAbierta = false;
+            descripcionSection.classList.remove('show');
+            btnVerMas.classList.remove('expanded');
+            btnText.textContent = 'Ver más';
+            btnIcon.style.transform = 'rotate(0deg)';
+
+            // Scroll suave hacia los servicios
+            document.querySelector('.servicios-main-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         };
-
-        modalTitle.textContent = serviciosData[servicioId] || 'Servicio';
-        modalContent.innerHTML = contenidoExtendido[servicioId] || '<p>Contenido no disponible</p>';
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-
-    function cerrarModal() {
-        const modal = document.getElementById('servicioModal');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-   
-    window.onclick = function(event) {
-        const modal = document.getElementById('servicioModal');
-        if (event.target === modal) {
-            cerrarModal();
-        }
-    }
-
-    // Selector de materiales
-    const materialImages = {
-        inox: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        frp: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        carbono: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    };
-
-    document.querySelectorAll('.material-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const img = document.querySelector('.materiales-image img');
-            const label = document.querySelector('.material-label');
-            const key = btn.dataset.img;
-            label.textContent = btn.dataset.label;
-            img.src = materialImages[key];
-        });
     });
 </script>
