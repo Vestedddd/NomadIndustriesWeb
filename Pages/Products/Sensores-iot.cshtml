@@ -1,9 +1,101 @@
 ﻿@page
-@model NomadIndustriesWeb.Pages.Products.SensoresIotModel
 @{
-    ViewData["Title"] = "Sensores IoT - Monitoreo Industrial";
+    ViewData["Title"] = "Productos - Nomad Industrial";
 }
 
+<!-- Banner Principal -->
+<section class="products-hero-banner">
+    <div class="products-hero-content">
+        <h1 class="products-hero-title">PRODUCTOS</h1>
+        <p class="products-hero-subtitle">Soluciones IoT robustas para monitoreo industrial avanzado</p>
+    </div>
+</section>
+
+<!-- Sección 1: Sensores de Monitoreo de Equipos Industriales IoT -->
+<section class="category-section">
+    <div class="container">
+        <div class="category-header">
+            <div class="category-title-section">
+                <div class="category-indicator"></div>
+                <h2 class="category-title">SENSORES DE MONITOREO DE EQUIPOS INDUSTRIALES IoT</h2>
+            </div>
+            <p class="category-description">
+                Tecnología avanzada para el monitoreo continuo de equipos industriales críticos, proporcionando datos en tiempo real para optimizar el rendimiento y prevenir fallas.
+            </p>
+        </div>
+
+        <!-- Grid de Productos Industriales -->
+        <div class="products-grid two-products">
+            <div class="product-card">
+                <a href="/productos/ver/sensor1" class="product-image">
+                    <div class="nomad-logo">
+                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    </div>
+                    <img src="~/images\Productos\SensoresIot\sensor1.png" alt="AT-R1 Sensor Industrial" />
+                </a>
+                <h3 class="product-name">AT-R1</h3>
+            </div>
+
+            <div class="product-card">
+                <a href="/productos/ver/sensor2" class="product-image">
+                    <div class="nomad-logo">
+                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    </div>
+                    <img src="~/images\Productos\SensoresIot\sensor2.png" alt="ND-ATOMS-N1 AT-R Sensor" />
+                </a>
+                <h3 class="product-name">ND-ATOMS-N1 AT-R</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección 2: Sensores de Monitoreo Lubricación IoT -->
+<section class="category-section">
+    <div class="container">
+        <div class="category-header">
+            <div class="category-title-section">
+                <div class="category-indicator"></div>
+                <h2 class="category-title">SENSORES DE MONITOREO LUBRICACIÓN IoT</h2>
+            </div>
+            <p class="category-description">
+                Soluciones especializadas para el monitoreo inteligente de aceites y lubricantes, detectando contaminación, niveles y calidad para mantener la integridad de sus equipos.
+            </p>
+        </div>
+
+        <!-- Grid de Productos Lubricación -->
+        <div class="products-grid three-products">
+            <div class="product-card">
+                <a href="/productos/ver/lubricacion1" class="product-image">
+                    <div class="nomad-logo">
+                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    </div>
+                    <img src="~/images/Productos/SensoresLubricación/lubricacion1.png" alt="QW3100 Sensor de Calidad de Aceite" />
+                </a>
+                <h3 class="product-name">QW3100</h3>
+            </div>
+
+            <div class="product-card">
+                <a href="/productos/ver/lubricacion2" class="product-image">
+                    <div class="nomad-logo">
+                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    </div>
+                    <img src="~/images/Productos/SensoresLubricación/lubricacion2.png" alt="LH2500 Sensor de Nivel de Aceite" />
+                </a>
+                <h3 class="product-name">LH2500</h3>
+            </div>
+
+            <div class="product-card">
+                <a href="/productos/ver/lubricacion3" class="product-image">
+                    <div class="nomad-logo">
+                        <img src="~/images/nomad-logo.png" alt="Nomad Industrial" />
+                    </div>
+                    <img src="~/images/Productos/SensoresLubricación/lubricacion3.png" alt="VB1100 Sensor de Vibración" />
+                </a>
+                <h3 class="product-name">VB1100</h3>
+            </div>
+        </div>
+    </div>
+</section>
 <style>
     /* Banner Principal Productos */
     .products-hero-banner {
@@ -44,7 +136,187 @@
         line-height: 1.4;
     }
 
+    /* Secciones de Categorías */
+    .category-section {
+        padding: 80px 0 60px 0;
+        background-color: white;
+    }
+
+        .category-section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+    .category-header {
+        margin-bottom: 50px;
+        text-align: left;
+    }
+
+    .category-title-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .category-indicator {
+        width: 4px;
+        height: 60px;
+        background-color: #1451c4;
+        border-radius: 2px;
+    }
+
+    .category-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #1451c4;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .category-description {
+        font-size: 1.1rem;
+        color: #666;
+        margin: 0;
+        padding-left: 19px;
+        line-height: 1.6;
+    }
+
+    /* Grid de Productos */
+    .products-grid {
+        display: grid;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+        .products-grid.two-products {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        .products-grid.three-products {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    .product-card {
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .product-image {
+        width: 100%;
+        height: 280px;
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 2px solid #e9ecef;
+        text-decoration: none;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+
+        .product-image:hover {
+            border-color: #1451c4;
+            box-shadow: 0 8px 25px rgba(20, 81, 196, 0.15);
+            text-decoration: none;
+        }
+
+        .product-image > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover > img {
+            transform: scale(1.05);
+        }
+
+    .nomad-logo {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 55px;
+        height: auto;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(20, 81, 196, 0.1);
+        z-index: 2;
+    }
+
+        .nomad-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transform: none !important;
+        }
+
+    .product-placeholder {
+        color: #ccc;
+        font-size: 3rem;
+    }
+
+    .product-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .product-card a {
+        text-decoration: none;
+    }
+
+    .product-card:hover .product-name {
+        color: #1451c4;
+    }
+
     /* Responsive */
+    @@media (max-width: 992px) {
+        .products-grid.two-products
+
+    {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .products-grid.three-products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .category-title {
+        font-size: 1.6rem;
+    }
+
+    .product-image {
+        height: 250px;
+    }
+
+    .nomad-logo {
+        width: 50px;
+        top: 10px;
+        right: 10px;
+    }
+
+    }
+
     @@media (max-width: 768px) {
         .products-hero-banner
 
@@ -63,6 +335,46 @@
         font-size: 1.2rem;
     }
 
+    .category-section {
+        padding: 60px 0 40px 0;
+    }
+
+    .category-header {
+        margin-bottom: 40px;
+    }
+
+    .category-title-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .category-indicator {
+        width: 60px;
+        height: 4px;
+    }
+
+    .category-description {
+        padding-left: 0;
+    }
+
+    .products-grid.three-products {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-image {
+        height: 220px;
+        padding: 15px;
+    }
+
+    .nomad-logo {
+        width: 45px;
+        top: 8px;
+        right: 8px;
+        padding: 6px;
+    }
+
     }
 
     @@media (max-width: 480px) {
@@ -76,189 +388,6 @@
         font-size: 1rem;
     }
 
-    }
-
-    body.scrolled .products-hero-banner {
-        margin-top: -70px;
-        padding-top: 70px;
-    }
-
-    /* Sección de Navegación de Categorías */
-    .category-navigation {
-        padding: 60px 0 40px 0;
-        background-color: white;
-    }
-
-    .category-nav-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 50px;
-    }
-
-    .category-title-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .category-indicator {
-        width: 4px;
-        height: 60px;
-        background-color: #1451c4;
-        border-radius: 2px;
-    }
-
-    .category-title {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #1451c4;
-        line-height: 1.2;
-        margin: 0;
-    }
-
-    .category-next-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .category-next-btn {
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-        .category-next-btn i {
-            color: #666;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .category-next-btn:hover {
-            border-color: #1451c4;
-            box-shadow: 0 4px 12px rgba(20, 81, 196, 0.2);
-            text-decoration: none;
-        }
-
-            .category-next-btn:hover i {
-                color: #1451c4;
-                transform: translateX(2px);
-            }
-
-    .category-next-text {
-        font-size: 0.9rem;
-        color: #666;
-        transition: all 0.3s ease;
-        text-decoration: none;
-    }
-
-    .category-next-section:hover .category-next-text {
-        color: #1451c4;
-    }
-
-    /* Grid de Productos */
-    .products-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-bottom: 60px;
-    }
-
-    .product-card {
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-    .product-image {
-        width: 100%;
-        height: 250px;
-        background-color: #f8f9fa;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 15px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        text-decoration: none;
-    }
-
-        .product-image:hover {
-            border-color: #1451c4;
-            box-shadow: 0 8px 25px rgba(20, 81, 196, 0.15);
-            text-decoration: none;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    .product-placeholder {
-        color: #ccc;
-        font-size: 3rem;
-    }
-
-    .product-name {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #333;
-        margin: 0;
-        line-height: 1.3;
-    }
-
-    .product-card a {
-        text-decoration: none;
-    }
-
-    .product-card:hover .product-name {
-        color: #1451c4;
-    }
-
-    /* Responsive */
-    @@media (max-width: 968px) {
-        .products-grid
-
-    {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .category-nav-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .category-title {
-        font-size: 1.6rem;
-    }
-
-    }
-
-    @@media (max-width: 576px) {
-        .products-grid
-
-    {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
     .category-title {
         font-size: 1.4rem;
     }
@@ -267,117 +396,14 @@
         height: 200px;
     }
 
+    .nomad-logo {
+        width: 40px;
+    }
+
+    }
+
+    body.scrolled .products-hero-banner {
+        margin-top: -70px;
+        padding-top: 70px;
     }
 </style>
-
-<!-- Banner Principal -->
-<section class="products-hero-banner">
-    <div class="products-hero-content">
-        <h1 class="products-hero-title">PRODUCTOS</h1>
-        <p class="products-hero-subtitle">Soluciones robustas para entornos exigentes</p>
-    </div>
-</section>
-
-<!-- Navegación de Categorías -->
-<section class="category-navigation">
-    <div class="container">
-        <div class="category-nav-header">
-            <div class="category-title-section">
-                <div class="category-indicator"></div>
-                <h2 class="category-title">SENSORES DE MONITOREO DE EQUIPOS INDUSTRIALES IoT</h2>
-            </div>
-            <div class="category-next-section">
-                <a href="/productos/Sensores-lubricacion" class="category-next-btn">
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-                <a href="/productos/sensores-lubricacion" class="category-next-text">
-                    Sensores de monitoreo lubricación IoT
-                </a>
-            </div>
-        </div>
-
-        <!-- Grid de Productos -->
-        <div class="products-grid">
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-1" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 1</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-2" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 2</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-3" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 3</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-4" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 4</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-5" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 5</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-6" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 6</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-7" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 7</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-8" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 8</h3>
-            </div>
-
-            <div class="product-card">
-                <a href="/productos/sensores-iot/producto-9" class="product-image">
-                    <div class="product-placeholder">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                </a>
-                <h3 class="product-name">Producto 9</h3>
-            </div>
-        </div>
-    </div>
-</section>
