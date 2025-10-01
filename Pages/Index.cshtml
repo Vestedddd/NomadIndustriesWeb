@@ -3,14 +3,192 @@
 @{
     ViewData["Title"] = "Inicio";
 }
+
+<!-- Banner Principal -->
+<section class="hero-banner">
+    <div class="hero-content">
+        <h1 class="hero-title">Transformamos la industria con tecnología avanzada</h1>
+        <a href="/productos" class="hero-btn">Ver Productos</a>
+    </div>
+</section>
+
+<!-- Sección de Categorías de Productos -->
+<section class="categories-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Productos destacados</h2>
+            
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
+                <div class="category-card" style="background: linear-gradient(135deg, #1451c4 0%, #2980b9 100%);">
+                    <div class="category-content">
+                        <h3 class="category-title">Sensores de Monitoreo Industrial IoT</h3>
+                        <p class="category-description">Plataforma inalámbrica completa para equipos industriales</p>
+                        <a href="/productos#industrial" class="category-btn">Ver Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Servicios -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <a href="/servicios" class="services-title-link">
+                <h2>Nuestros servicios</h2>
+            </a>
+            <p class="services-subtitle">Algunos de nuestros servicios especializados</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Ingeniería inversa</h3>
+                        <p class="service-description">
+                            Transformamos piezas físicas en modelos digitales precisos,
+                            asegurando compatibilidad, funcionalidad y mejoras continuas
+                            en cada componente técnico.
+                        </p>
+                        <a href="/servicios?servicio=ingenieria-inversa" class="service-btn">
+                            LEER MÁS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Levantamiento 3D</h3>
+                        <p class="service-description">
+                            Capturamos entornos y objetos complejos mediante escaneo 3D
+                            de alta precisión, generando representaciones exactas para
+                            ingeniería, diseño y mantenimiento industrial.
+                        </p>
+                        <a href="/servicios?servicio=levantamiento-3d" class="service-btn">
+                            LEER MÁS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">Proceso de nube de puntos</h3>
+                        <p class="service-description">
+                            Procesamos nubes de puntos detalladas para convertir datos
+                            en geometrías útiles, optimizando el flujo de diseño y
+                            reduciendo errores en cada fase del proyecto.
+                        </p>
+                        <a href="/servicios?servicio=nube-puntos" class="service-btn">
+                            LEER MÁS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Sobre Nosotros -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="about-title">Ingeniería Industrial Inteligente para el Futuro</h2>
+                <p class="about-description">
+                    Transformamos la industria con soluciones innovadoras que integran materiales nobles, tecnología IoT avanzada y sostenibilidad.
+                    Combinamos más de 25 años de experiencia con una visión renovada orientada al cliente.
+                </p>
+
+                <div class="mission-vision-buttons">
+                    <a href="/sobre-nosotros?tab=mision" class="mv-button">
+                        <i class="fas fa-bullseye"></i>
+                        Nuestra Misión
+                    </a>
+                    <a href="/sobre-nosotros?tab=vision" class="mv-button">
+                        <i class="fas fa-eye"></i>
+                        Nuestra Visión
+                    </a>
+                </div>
+
+                <a href="/sobre-nosotros" class="ver-mas-button">
+                    VER MÁS
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                     alt="Trabajador industrial en NOMAD Industrial">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Contáctanos -->
+<section class="contactanos-section">
+    <div class="container text-center">
+        <h2 class="contactanos-title">
+            <a href="/Contacto" class="contactanos-title-link">
+                Contáctanos
+            </a>
+        </h2>
+        <h3 class="contactanos-subtitle">
+            Haznos llegar tu mensaje
+        </h3>
+
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="~/images/empleado1.png" class="empleado-foto" alt="Empleado 1">
+                    <div class="empleado-info">
+                        <h5 class="empleado-nombre">Claudio Herrera</h5>
+                        <p class="empleado-cargo">Cargo: Ventas</p>
+                        <p class="empleado-correo">Correo: ventas@nomadspa.cl</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="~/images/empleado2.png" class="empleado-foto" alt="Empleado 2">
+                    <div class="empleado-info">
+                        <h5 class="empleado-nombre">Eric Schmidt</h5>
+                        <p class="empleado-cargo">Cargo: Ventas</p>
+                        <p class="empleado-correo">Correo: ventas@nomadspa.cl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Separador -->
+<section class="section-separator"></section>
+
 <style>
+    
     /* Banner Principal */
     .hero-banner {
         position: relative;
         height: 80vh;
         min-height: 600px;
-        margin-top: -110px; 
-        padding-top: 110px; 
+        margin-top: -110px;
+        padding-top: 110px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('~/images/banner-inicio.jpg');
         background-size: cover;
         background-position: center;
@@ -33,13 +211,6 @@
         margin-bottom: 30px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         line-height: 1.2;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 40px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        font-weight: 300;
     }
 
     .hero-btn {
@@ -65,7 +236,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(241, 196, 15, 0.4);
         }
-    /* Placeholder para imagen de fondo */
+
     .hero-banner::before {
         content: '';
         position: absolute;
@@ -116,14 +287,6 @@
             margin-top: 20px;
         }
 
-    .category-description {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin: 10px 0 20px 0;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        line-height: 1.3;
-    }
-
     .category-card {
         position: relative;
         border-radius: 20px;
@@ -173,6 +336,14 @@
         font-weight: bold;
         margin-bottom: 20px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1.3;
+    }
+
+    .category-description {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 10px 0 20px 0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
         line-height: 1.3;
     }
 
@@ -342,16 +513,6 @@
         line-height: 1.6;
     }
 
-    .mission-vision-content {
-        background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        margin-bottom: 2rem;
-        min-height: 180px;
-        transition: all 0.3s ease;
-    }
-
     .mission-vision-buttons {
         display: flex;
         gap: 1rem;
@@ -381,34 +542,6 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(20, 81, 196, 0.3);
-        }
-
-        .mv-button.active {
-            background: #1451c4;
-            color: white;
-        }
-
-    .mv-content {
-        display: none;
-        animation: fadeIn 0.5s ease;
-    }
-
-        .mv-content.active {
-            display: block;
-        }
-
-        .mv-content h4 {
-            color: #1451c4;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .mv-content p {
-            color: #666;
-            line-height: 1.6;
-            margin: 0;
-            text-align: justify;
         }
 
     .ver-mas-button {
@@ -457,173 +590,221 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-   @@keyframes fadeIn {
-        from
-
-    {
-        opacity: 0;
-        transform: translateY(10px);
+    /* Sección Contáctanos */
+    .contactanos-section {
+        padding: 60px 0;
+        background-color: #1451c4;
+        color: white;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .contactanos-title {
+        font-size: 1.8rem;
+        text-decoration: underline;
+        text-decoration-color: #FFD700;
+        margin-bottom: 10px;
     }
 
+    .contactanos-title-link {
+        text-decoration: none;
+        font-weight: bold;
+        color: #FFD700;
+        transition: all 0.3s ease;
     }
 
-    
+        .contactanos-title-link:hover {
+            color: #ffd700;
+            opacity: 0.9;
+        }
+
+    .contactanos-subtitle {
+        font-weight: bold;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .empleado-foto {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .empleado-info {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        width: 100%;
+        max-width: 300px;
+        text-align: left;
+    }
+
+    .empleado-nombre {
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .empleado-cargo,
+    .empleado-correo {
+        margin-bottom: 8px;
+        color: #666;
+        font-weight: 600;
+        font-size: 1.05rem;
+    }
+
+    .empleado-correo {
+        margin-bottom: 0;
+    }
+
+    /* Separador */
+    .section-separator {
+        height: 100px;
+        background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+        border-top: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /* Responsive */
     @@media (max-width: 768px) {
-        .hero-banner
+        .hero-banner {
+            height: 70vh;
+            min-height: 500px;
+            background-attachment: scroll;
+        }
 
-    {
-        height: 70vh;
-        min-height: 500px;
-        background-attachment: scroll;
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+        }
+
+        .categories-section {
+            padding: 60px 0;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+
+        .service-card {
+            height: 350px;
+            padding: 30px 25px 25px 25px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            bottom: 15px;
+            right: 20px;
+        }
+
+        .about-content {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-title {
+            font-size: 2rem;
+        }
+
+        .mission-vision-buttons {
+            flex-direction: column;
+        }
+
+        .about-image img {
+            height: 400px;
+        }
+
+        .about-section {
+            padding: 60px 0;
+        }
     }
 
-    .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
+    @@media (max-width: 480px) {
+        .hero-title {
+            font-size: 2rem;
+        }
 
-    .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-    }
+        .hero-btn {
+            padding: 10px 25px;
+            font-size: 0.9rem;
+        }
 
-    .hero-btn {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
 
-    .categories-section {
-        padding: 60px 0;
-    }
+        .category-card {
+            height: 220px;
+        }
 
-    .section-title h2 {
-        font-size: 2rem;
-    }
+        .category-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
 
-    .service-card {
-        height: 350px;
-        padding: 30px 25px 25px 25px;
-    }
+        .category-btn {
+            padding: 8px 20px;
+            font-size: 0.8rem;
+        }
 
-    .service-title {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
+        .service-card {
+            height: 320px;
+            padding: 25px 20px 20px 20px;
+        }
 
-    .service-description {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
+        .service-title {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
 
-    .service-icon {
-        font-size: 2.5rem;
-        bottom: 15px;
-        right: 20px;
-    }
+        .service-description {
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+        }
 
-    
-    .about-content {
-        flex-direction: column;
-        gap: 40px;
-    }
+        .service-btn {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+        }
 
-    .about-title {
-        font-size: 2rem;
-    }
+        .service-icon {
+            font-size: 2rem;
+            bottom: 12px;
+            right: 15px;
+        }
 
-    .mission-vision-buttons {
-        flex-direction: column;
-    }
+        .about-title {
+            font-size: 1.8rem;
+        }
 
-    .about-image img {
-        height: 400px;
-    }
+        .about-image img {
+            height: 300px;
+        }
 
-    .about-section {
-        padding: 60px 0;
-    }
+        .contactanos-title {
+            font-size: 1.5rem;
+        }
 
-    }
-
-   @@media (max-width: 480px) {
-        .hero-title
-
-    {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .hero-btn {
-        padding: 10px 25px;
-        font-size: 0.9rem;
-    }
-
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
-
-    .category-card {
-        height: 220px;
-    }
-
-    .category-title {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-    }
-
-    .category-btn {
-        padding: 8px 20px;
-        font-size: 0.8rem;
-    }
-
-    .service-card {
-        height: 320px;
-        padding: 25px 20px 20px 20px;
-    }
-
-    .service-title {
-        font-size: 1.2rem;
-        margin-bottom: 12px;
-    }
-
-    .service-description {
-        font-size: 0.85rem;
-        margin-bottom: 18px;
-    }
-
-    .service-btn {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-
-    .service-icon {
-        font-size: 2rem;
-        bottom: 12px;
-        right: 15px;
-    }
-
-    /* About section mobile */
-    .about-title {
-        font-size: 1.8rem;
-    }
-
-    .mission-vision-content {
-        padding: 1.5rem;
-        min-height: 160px;
-    }
-
-    .about-image img {
-        height: 300px;
-    }
-
+        .contactanos-subtitle {
+            font-size: 1.5rem;
+        }
     }
 
     /* Ajuste cuando el header superior está oculto */
@@ -631,514 +812,43 @@
         margin-top: -70px;
         padding-top: 70px;
     }
-</style>
 
-<!-- Banner Principal -->
-<section class="hero-banner">
-    <div class="hero-content">
-        <h1 class="hero-title">Desarrollo de piezas a medida para la minería</h1>
-        <a href="/productos" class="hero-btn">Ver Productos</a>
-    </div>
-</section>
-
-<!-- Sección de Categorías de Productos -->
-<section class="categories-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Productos destacados</h2>
-            <p>Soluciones IoT especializadas para monitoreo industrial avanzado</p>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="category-card" style="background-image: url('/images/Productos/SensoresIot/sensor1.png');">
-                    <div class="category-content">
-                        <h3 class="category-title">AT-R1</h3>
-                        <p class="category-description">Sensor industrial avanzado</p>
-                        <a href="/productos/ver/sensor1" class="category-btn">Ver Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="category-card" style="background-image: url('/images/Productos/SensoresIot/sensor2.png');">
-                    <div class="category-content">
-                        <h3 class="category-title">ND-ATOMS-N1</h3>
-                        <p class="category-description">Tecnología ATOMS predictiva</p>
-                        <a href="/productos/ver/sensor2" class="category-btn">Ver Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="category-card" style="background-image: url('/images/Productos/SensoresLubricación/lubricacion1.png');">
-                    <div class="category-content">
-                        <h3 class="category-title">QW3100</h3>
-                        <p class="category-description">Calidad de aceite en línea</p>
-                        <a href="/productos/ver/lubricacion1" class="category-btn">Ver Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="category-card" style="background-image: url('/images/Productos/SensoresLubricación/lubricacion2.png');">
-                    <div class="category-content">
-                        <h3 class="category-title">LH2500</h3>
-                        <p class="category-description">Nivel de aceite y humedad</p>
-                        <a href="/productos/ver/lubricacion2" class="category-btn">Ver Ahora</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-
-<!-- Sección de Servicios -->
-<section class="services-section">
-    <div class="container">
-        <div class="section-title">
-            <a href="/servicios" class="services-title-link">
-                <h2>Nuestros servicios</h2>
-            </a>
-            <p class="services-subtitle">Algunos de nuestros servicios especializados</p>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Ingeniería inversa</h3>
-                        <p class="service-description">
-                            Transformamos piezas físicas en modelos digitales precisos,
-                            asegurando compatibilidad, funcionalidad y mejoras continuas
-                            en cada componente técnico.
-                        </p>
-                        <a href="/servicios?servicio=ingenieria-inversa" class="service-btn">
-                            LEER MÁS <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Levantamiento 3D</h3>
-                        <p class="service-description">
-                            Capturamos entornos y objetos complejos mediante escaneo 3D
-                            de alta precisión, generando representaciones exactas para
-                            ingeniería, diseño y mantenimiento industrial.
-                        </p>
-                        <a href="/servicios?servicio=levantamiento-3d" class="service-btn">
-                            LEER MÁS <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3 class="service-title">Proceso de nube de puntos</h3>
-                        <p class="service-description">
-                            Procesamos nubes de puntos detalladas para convertir datos
-                            en geometrías útiles, optimizando el flujo de diseño y
-                            reduciendo errores en cada fase del proyecto.
-                        </p>
-                        <a href="/servicios?servicio=nube-puntos" class="service-btn">
-                            LEER MÁS <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Sección Sobre Nosotros -->
-<section class="about-section">
-    <div class="container">
-        <div class="about-content">
-            <!-- Contenido de texto -->
-            <div class="about-text">
-                <h2 class="about-title">Ingeniería Industrial Inteligente para el Futuro</h2>
-                <p class="about-description">
-                    Transformamos la industria con soluciones innovadoras que integran materiales nobles, tecnología IoT avanzada y sostenibilidad.
-                    Combinamos más de 25 años de experiencia con una visión renovada orientada al cliente.
-                </p>
-
-                <!-- Botones Misión/Visión -->
-                <div class="mission-vision-buttons">
-                    <a href="/sobre-nosotros?tab=mision" class="mv-button">
-                        <i class="fas fa-bullseye"></i>
-                        Nuestra Misión
-                    </a>
-                    <a href="/sobre-nosotros?tab=vision" class="mv-button">
-                        <i class="fas fa-eye"></i>
-                        Nuestra Visión
-                    </a>
-                </div>
-               
-                <!-- Botón Ver Más -->
-                <a href="/sobre-nosotros" class="ver-mas-button">
-                    VER MÁS
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <!-- Imagen -->
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                     alt="Trabajador industrial en NOMAD Industrial">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección Contáctanos -->
-<section class="py-5 text-white" style="background-color:#1451c4;">
-    <div class="container text-center">
-        <h2 class="mb-2" style="font-size: 1.8rem; text-decoration: underline; text-decoration-color: #FFD700;">
-            <a href="/Contacto" class="text-decoration-none fw-bold" style="color: #FFD700;">
-                Contáctanos
-            </a>
-        </h2>
-        <h3 class="fw-bold mb-5" style="font-size: 2rem;">
-            Haznos llegar tu mensaje
-        </h3>
-
-        <div class="row justify-content-center g-4">
-            <!-- Empleado 1 -->
-            <div class="col-md-4">
-                <div class="d-flex flex-column align-items-center">
-                    <img src="~/images/empleado1.png" class="rounded-circle mb-3" alt="Empleado 1"
-                         style="width: 150px; height: 150px; object-fit: cover;">
-                    <div class="bg-white text-start rounded-4 p-4 w-100" style="max-width: 300px;">
-                        <h5 class="mb-2 text-dark fw-bold" style="font-size: 1.5rem;">Claudio Herrera</h5>
-                        <p class="mb-2 text-secondary fw-semibold" style="font-size: 1.05rem;">Cargo:Ventas</p>
-                        <p class="mb-0 text-secondary fw-semibold" style="font-size: 1.05rem;">Correo:ventas@nomadspa.cl</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Empleado 2 -->
-            <div class="col-md-4">
-                <div class="d-flex flex-column align-items-center">
-                    <img src="~/images/empleado2.png" class="rounded-circle mb-3" alt="Empleado 2"
-                         style="width: 150px; height: 150px; object-fit: cover;">
-                    <div class="bg-white text-start rounded-4 p-4 w-100" style="max-width: 300px;">
-                        <h5 class="mb-2 text-dark fw-bold" style="font-size: 1.5rem;">Eric Schmidt</h5>
-                        <p class="mb-2 text-secondary fw-semibold" style="font-size: 1.05rem;">Cargo:Ventas</p>
-                        <p class="mb-0 text-secondary fw-semibold" style="font-size: 1.05rem;">Correo:ventas@nomadspa.cl</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Sección de Clientes y Representaciones Exclusivas -->
-<style>
-    /* Sección de Clientes */
-    .clients-section {
-        padding: 80px 0 40px 0;
-        background-color: white;
-    }
-
-    .clients-content {
-        display: flex;
-        align-items: center;
-        gap: 60px;
-        margin-bottom: 80px;
-    }
-
-    .clients-title-section {
-        flex-shrink: 0;
-        min-width: 200px;
-    }
-
-    .clients-title {
-        font-size: 2.5rem;
-        color: #1451c4;
-        margin: 0;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.1;
-    }
-
-        .clients-title .normal-weight {
-            font-weight: 400;
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
 
-        .clients-title .bold-weight {
-            font-weight: 700;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-    .clients-separator {
-        width: 1px;
-        height: 120px;
-        background-color: #e8ecef;
-        flex-shrink: 0;
-    }
-
-    .clients-logos {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 40px;
-        flex: 1;
-    }
-
-    .client-logo {
-        flex: 1;
-        max-width: 250px;
-        height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .client-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-    /* Sección de Representaciones Exclusivas */
-    .representations-section {
-        padding: 40px 0 80px 0;
-        background-color: white;
-    }
-
-    .representations-title {
-        font-size: 2.2rem;
-        color: #1451c4;
-        text-align: center;
-        margin-bottom: 50px;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-    }
-
-        .representations-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 180px;
-            height: 3px;
-            background-color: #1451c4;
-            border-radius: 2px;
-        }
-
-    .representations-container {
-        background: white;
-        border-radius: 15px;
-        padding: 40px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(20, 81, 196, 0.1);
-    }
-
-    .representations-logos {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-
-    .representation-logo {
-        flex: 1;
-        min-width: 120px;
-        max-width: 150px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .representation-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-    /* Responsive */
-    @@media (max-width: 992px) {
-        .clients-content
-
-    {
-        flex-direction: column;
-        gap: 30px;
-        align-items: flex-start;
-    }
-
-    .clients-separator {
-        width: 100%;
-        height: 1px;
-        align-self: stretch;
-    }
-
-    .clients-logos {
-        flex-direction: column;
-        gap: 30px;
-        width: 100%;
-    }
-
-    .client-logo {
-        max-width: 300px;
-        width: 100%;
-    }
-
-    .representations-logos {
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .representation-logo {
-        min-width: 100px;
-        max-width: 120px;
-        height: 80px;
-    }
-
-    }
-
-    @@media (max-width: 768px) {
-        .clients-section
-
-    {
-        padding: 60px 0 30px 0;
-    }
-
-    .representations-section {
-        padding: 30px 0 60px 0;
-    }
-
-    .clients-title {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .clients-content {
-        text-align: center;
-    }
-
-    .representations-title {
-        font-size: 1.8rem;
-    }
-
-    .representations-container {
-        padding: 30px 20px;
-    }
-
-    .representations-logos {
-        gap: 15px;
-    }
-
-    .representation-logo {
-        min-width: 80px;
-        max-width: 100px;
-        height: 70px;
-    }
-
     }
 </style>
-
-<!-- Sección de Clientes -->
-<section class="clients-section">
-    <div class="container">
-        <div class="clients-content">
-            <div class="clients-title-section">
-                <h2 class="clients-title">
-                    <span class="normal-weight">Nuestros</span>
-                    <span class="bold-weight">clientes</span>
-                </h2>
-            </div>
-
-            <div class="clients-separator"></div>
-
-            <div class="clients-logos">
-                <div class="client-logo">
-                    <img src="~/images/logo-cliente1.png" alt="Cliente 1" />
-                </div>
-                <div class="client-logo">
-                    <img src="~/images/logo-cliente2.png" alt="Cliente 2" />
-                </div>
-                <div class="client-logo">
-                    <img src="~/images/logos/logo-cliente3.png" alt="Cliente 3" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Sección de Representaciones Exclusivas -->
-<section class="representations-section">
-    <div class="container">
-        <h2 class="representations-title">Representaciones Exclusivas</h2>
-
-        <div class="representations-container">
-            <div class="representations-logos">
-                <div class="representation-logo">
-                    <img src="~/images/logos/logo-marca1.png" alt="Marca 1" />
-                </div>
-                <div class="representation-logo">
-                    <img src="~/images/logos/logo-marca2.png" alt="Marca 2" />
-                </div>
-                <div class="representation-logo">
-                    <img src="~/images/logos/logo-marca3.png" alt="Marca 3" />
-                </div>
-                <div class="representation-logo">
-                    <img src="~/images/logos/logo-marca4.png" alt="Marca 4" />
-                </div>
-                <div class="representation-logo">
-                    <img src="~/images/logos/logo-marca5.png" alt="Marca 5" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 
 <script>
     function showContent(type) {
-        
         document.querySelectorAll('.mv-button').forEach(btn => {
             btn.classList.remove('active');
         });
 
-        
         document.querySelectorAll('.mv-content').forEach(content => {
             content.classList.remove('active');
         });
 
-        
         event.target.classList.add('active');
-
-        
         document.getElementById(type).classList.add('active');
     }
 
-    // Función para manejar clics en los botones con navegación
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.mv-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 const isActive = this.classList.contains('active');
 
                 if (!isActive) {
-                    
                     const type = this.textContent.includes('Misión') ? 'mission' : 'vision';
                     showContent(type);
                 } else {
-                    
                     const target = this.getAttribute('data-target');
                     window.location.href = `/sobre-nosotros${target}`;
                 }

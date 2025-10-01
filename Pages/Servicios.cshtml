@@ -50,11 +50,7 @@
                 <p class="servicio-resumen">
                     Diseñamos, fabricamos y suministramos soluciones industriales innovadoras a medida, integrando materiales nobles, tecnología IoT y sensores inteligentes para crear sistemas que optimizan procesos, reducen downtime y protegen activos industriales con implementación ágil y sin interrupciones operacionales.
                 </p>
-                <div class="btn-container">
-                    <button class="btn-ver-mas" id="btnVerMas" onclick="toggleDescripcionDetalle()">
-                        <span class="btn-text">Ver más</span> <i class="fas fa-chevron-down btn-icon"></i>
-                    </button>
-                </div>
+                
             </div>
 
             <!-- Imagen del servicio -->
@@ -65,29 +61,6 @@
     </div>
 </section>
 
-<!-- Descripción Detallada Desplegable -->
-<section id="descripcionDetalle" class="descripcion-detalle-section">
-    <div class="container">
-        <div class="descripcion-detalle-content">
-            <div class="descripcion-header">
-                <h2 id="descripcionTitulo" class="descripcion-titulo">Descripción del servicio</h2>
-                <button class="btn-cerrar-detalle" onclick="ocultarDescripcionDetalle()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="descripcion-body">
-                <div id="descripcionContenido" class="descripcion-contenido">
-                    <!-- Contenido será cargado dinámicamente -->
-                </div>
-                <div class="descripcion-contacto">
-                    <button class="btn-contacto-servicio" onclick="window.location.href='/Contacto'">
-                        <i class="fas fa-envelope"></i> Contactar para este servicio
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Nota de enfoque de servicios -->
 <section class="servicios-nota-section">
@@ -313,152 +286,9 @@
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
 
-    /* Descripción Detallada Desplegable */
-    .descripcion-detalle-section {
-        background: white;
-        border-top: 3px solid #1451c4;
-        border-bottom: 1px solid #e9ecef;
-        padding: 0 0;
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.4s ease-out;
-    }
+    
 
-        .descripcion-detalle-section.show {
-            opacity: 1;
-            max-height: 2000px;
-            padding: 60px 0;
-        }
-
-    .descripcion-detalle-content {
-        background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        border: 2px solid #1451c4;
-    }
-
-    .descripcion-header {
-        background: linear-gradient(135deg, #1451c4 0%, #0f3a8c 100%);
-        color: white;
-        padding: 30px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .descripcion-titulo {
-        font-size: 2.2rem;
-        font-weight: bold;
-        margin: 0;
-        color: white;
-    }
-
-    .btn-cerrar-detalle {
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: white;
-        font-size: 1.8rem;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .btn-cerrar-detalle:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
-
-    .descripcion-body {
-        padding: 50px 40px;
-    }
-
-    .descripcion-contenido {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #444;
-        margin-bottom: 40px;
-        max-width: none;
-    }
-
-        .descripcion-contenido h3 {
-            color: #1451c4;
-            font-size: 1.6rem;
-            font-weight: bold;
-            margin: 30px 0 20px 0;
-            border-left: 4px solid #1451c4;
-            padding-left: 15px;
-        }
-
-        .descripcion-contenido h4 {
-            color: #1451c4;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin: 25px 0 15px 0;
-        }
-
-        .descripcion-contenido p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .descripcion-contenido ul {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-
-            .descripcion-contenido ul li {
-                margin-bottom: 10px;
-                position: relative;
-            }
-
-                .descripcion-contenido ul li::marker {
-                    color: #1451c4;
-                    font-weight: bold;
-                }
-
-        .descripcion-contenido strong {
-            color: #1451c4;
-            font-weight: 700;
-        }
-
-    .descripcion-contacto {
-        text-align: center;
-        padding-top: 30px;
-        border-top: 2px solid rgba(20, 81, 196, 0.2);
-    }
-
-    .btn-contacto-servicio {
-        background: linear-gradient(135deg, #1451c4 0%, #0f3a8c 100%);
-        color: white;
-        border: none;
-        padding: 18px 35px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        box-shadow: 0 8px 25px rgba(20, 81, 196, 0.3);
-    }
-
-        .btn-contacto-servicio:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(20, 81, 196, 0.4);
-        }
-
-        .btn-contacto-servicio i {
-            font-size: 1.3rem;
-        }
-
+     
     /* Nota de servicios */
     .servicios-nota-section {
         background-color: #f8f9fa;
@@ -705,11 +535,9 @@
         const servicioNombre = document.querySelector('.servicio-nombre');
         const servicioResumen = document.querySelector('.servicio-resumen');
         const servicioImagen = document.querySelector('.servicio-imagen');
-        const btnContainer = document.querySelector('.btn-container');
 
         // Estado global
         let servicioActivo = 'proyectos-customizada';
-        let descripcionAbierta = false;
 
         const serviciosData = {
             'proyectos-customizada': {
@@ -739,65 +567,6 @@
             }
         };
 
-        // Contenido extendido de servicios (placeholders)
-        const contenidoExtendido = {
-            'proyectos-customizada': `
-                <h3>Descripción Extendida - Proyectos de Ingeniería Customizada</h3>
-                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
-                <p>Este es un placeholder donde se insertará toda la información detallada del servicio, incluyendo metodología, fases, beneficios, casos de uso, etc.</p>
-                <ul>
-                    <li>Metodología completa del servicio</li>
-                    <li>Fases de implementación</li>
-                    <li>Beneficios y resultados esperados</li>
-                    <li>Casos de éxito</li>
-                </ul>
-            `,
-            'ingenieria-inversa': `
-                <h3>Descripción Extendida - Ingeniería Inversa</h3>
-                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
-                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de ingeniería inversa.</p>
-                <ul>
-                    <li>Proceso de análisis de componentes</li>
-                    <li>Tecnologías de digitalización</li>
-                    <li>Optimización de diseños</li>
-                    <li>Casos de aplicación</li>
-                </ul>
-            `,
-            'levantamiento-3d': `
-                <h3>Descripción Extendida - Levantamiento 3D Industrial</h3>
-                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
-                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de levantamiento 3D.</p>
-                <ul>
-                    <li>Tecnologías de escaneo utilizadas</li>
-                    <li>Precisión y alcance</li>
-                    <li>Aplicaciones industriales</li>
-                    <li>Entregables y formatos</li>
-                </ul>
-            `,
-            'nube-puntos': `
-                <h3>Descripción Extendida - Procesamiento Nube de Puntos</h3>
-                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
-                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de procesamiento.</p>
-                <ul>
-                    <li>Algoritmos de procesamiento</li>
-                    <li>Conversión a modelos CAD</li>
-                    <li>Software especializado</li>
-                    <li>Formatos de salida</li>
-                </ul>
-            `,
-            'monitoreo-iot': `
-                <h3>Descripción Extendida - Monitoreo IoT y Mantenimiento Predictivo</h3>
-                <p><strong>Aquí irá el contenido completo del servicio una vez proporcionado.</strong></p>
-                <p>Este es un placeholder donde se insertará toda la información detallada del servicio de IoT.</p>
-                <ul>
-                    <li>Sensores y tecnologías IoT</li>
-                    <li>Plataformas de monitoreo</li>
-                    <li>Algoritmos predictivos</li>
-                    <li>Beneficios del mantenimiento predictivo</li>
-                </ul>
-            `
-        };
-
         // Verificar parámetros URL al cargar la página
         const urlParams = new URLSearchParams(window.location.search);
         const servicioParam = urlParams.get('servicio');
@@ -820,20 +589,7 @@
                 servicioNombre.textContent = data.nombre;
                 servicioResumen.textContent = data.resumen;
                 servicioImagen.src = data.imagen;
-
-                // Si la descripción está abierta, actualizar su contenido
-                if (descripcionAbierta) {
-                    actualizarContenidoDescripcion();
-                }
             }
-        }
-
-        function actualizarContenidoDescripcion() {
-            const descripcionTitulo = document.getElementById('descripcionTitulo');
-            const descripcionContenido = document.getElementById('descripcionContenido');
-
-            descripcionTitulo.textContent = `Descripción del servicio - ${serviciosData[servicioActivo].nombre}`;
-            descripcionContenido.innerHTML = contenidoExtendido[servicioActivo] || '<p>Contenido no disponible</p>';
         }
 
         // Event listeners para botones de servicios
@@ -845,54 +601,5 @@
                 cambiarServicio(servicioId);
             });
         });
-
-        // Función global para toggle de descripción
-        window.toggleDescripcionDetalle = function() {
-            const descripcionSection = document.getElementById('descripcionDetalle');
-            const btnVerMas = document.getElementById('btnVerMas');
-            const btnText = btnVerMas.querySelector('.btn-text');
-            const btnIcon = btnVerMas.querySelector('.btn-icon');
-
-            if (!descripcionAbierta) {
-                // Abrir descripción
-                descripcionAbierta = true;
-                actualizarContenidoDescripcion();
-                descripcionSection.classList.add('show');
-                btnVerMas.classList.add('expanded');
-                btnText.textContent = 'Ver menos';
-                btnIcon.style.transform = 'rotate(180deg)';
-
-                // Scroll suave hacia la descripción
-                setTimeout(() => {
-                    descripcionSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 200);
-            } else {
-                // Cerrar descripción
-                ocultarDescripcionDetalle();
-            }
-        };
-
-        // Función global para ocultar descripción
-        window.ocultarDescripcionDetalle = function() {
-            const descripcionSection = document.getElementById('descripcionDetalle');
-            const btnVerMas = document.getElementById('btnVerMas');
-            const btnText = btnVerMas.querySelector('.btn-text');
-            const btnIcon = btnVerMas.querySelector('.btn-icon');
-
-            descripcionAbierta = false;
-            descripcionSection.classList.remove('show');
-            btnVerMas.classList.remove('expanded');
-            btnText.textContent = 'Ver más';
-            btnIcon.style.transform = 'rotate(0deg)';
-
-            // Scroll suave hacia los servicios
-            document.querySelector('.servicios-main-section').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        };
     });
 </script>

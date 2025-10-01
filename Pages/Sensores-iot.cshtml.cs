@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace NomadIndustriesWeb.Pages
 {
-    public class ServiciosModel : CorreoPageModel
+    public class SensoresIotModel : CorreoPageModel
     {
-        public ServiciosModel(IConfiguration configuration) : base(configuration)
+        public SensoresIotModel(IConfiguration configuration) : base(configuration)
         {
         }
 
@@ -49,7 +49,6 @@ namespace NomadIndustriesWeb.Pages
 
                 // Enviar correo usando el método heredado
                 var resultado = await EnviarCorreoAsync(asunto, correo, nombre, telefono, mensaje);
-
                 return resultado;
             }
             catch (Exception ex)

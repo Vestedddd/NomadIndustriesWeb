@@ -2,12 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages(options =>
 {
-   
-    options.Conventions.AddPageRoute("/Products/Sensores-iot", "/productos/lista");
-    options.Conventions.AddPageRoute("/Products/Sensores-iot", "/productos");
 
-    
-    options.Conventions.AddPageRoute("/Products/Detalle", "/productos/ver/{id}");
+    options.Conventions.AddPageRoute("/Sensores-Iot", "/Productos");
 });
 var app = builder.Build();
 if (!app.Environment.IsDevelopment())
